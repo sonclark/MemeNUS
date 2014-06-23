@@ -68,6 +68,8 @@ class MainPage(BaseHandler):
         template = jinja_environment.get_template('welcome.html')
         self.response.out.write(template.render(template_values))
 
+
+
 class Welcome(BaseHandler):
     def get(self):
         if self.session.get('is_valid') != True:
@@ -95,10 +97,27 @@ class Welcome(BaseHandler):
         else :
             self.redirect(app_domain)
 
+class Upload(BaseHandler):
+    def get(self):
+        if self.session.get('is_valid') != True:
+            self.session['ivle_token'] = self.request.get('token')
+            self.session['is_valid'] = json.load(urllib2.urlopen('https://ivle.nus.edu.sg/api/Lapi.svc/Validate?APIKey=' + ivle_api_key + '&Token=' + self.session.get('ivle_token')))['Success']
+
+        if self.session.get('is_valid') == True:
+            template_values = {
+                'student_name' : self.session.get('student_name'),
+                'student_email' : self.session.get('student_email')
+            }
+
+            template = jinja_environment.get_template("upload.html")
+            self.response.out.write(template.render(template_values))
+        else :
+            self.redirect(app_domain)
+
 app = webapp2.WSGIApplication([
                                   ('/', MainPage),
                                   ('/welcome', Welcome),
-
+                                  ('/upload', Upload)
                                   ],
                               config = config,
                                         debug=True)
