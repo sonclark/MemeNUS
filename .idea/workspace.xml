@@ -408,7 +408,11 @@
       <created>1403617189882</created>
       <updated>1403617189882</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed home.html for upload bootstrap.">
+      <created>1403617194938</created>
+      <updated>1403617194938</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
