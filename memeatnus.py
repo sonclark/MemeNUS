@@ -78,13 +78,13 @@ class Welcome(BaseHandler):
 
         if self.session.get('is_valid') == True:
             student_profile_object = json.load(urllib2.urlopen('https://ivle.nus.edu.sg/api/Lapi.svc/Profile_View?APIKey=' + ivle_api_key + '&AuthToken=' + self.session.get('ivle_token')))['Results'][0]
-            self.session['student_id'] = student_profile_object['UserID']
+            #self.session['student_id'] = student_profile_object['UserID']
             self.session['student_name'] = student_profile_object['Name']
             self.session['student_email'] = student_profile_object['Email']
-            self.session['student_matriculation_year'] = student_profile_object['MatriculationYear']
-            self.session['student_first_major'] = student_profile_object['FirstMajor']
-            self.session['student_second_major'] = student_profile_object['SecondMajor']
-            self.session['student_faculty'] = student_profile_object['Faculty']
+            #self.session['student_matriculation_year'] = student_profile_object['MatriculationYear']
+            #self.session['student_first_major'] = student_profile_object['FirstMajor']
+            #self.session['student_second_major'] = student_profile_object['SecondMajor']
+            #self.session['student_faculty'] = student_profile_object['Faculty']
 
 
             template_values = {
@@ -98,15 +98,22 @@ class Welcome(BaseHandler):
             self.redirect(app_domain)
 
 class Upload(BaseHandler):
+    image = ""
+    def post(self):
+        global image
+        image = self.request.get("textinput")
+        self.redirect(app_domain + "upload")
     def get(self):
         if self.session.get('is_valid') != True:
             self.session['ivle_token'] = self.request.get('token')
             self.session['is_valid'] = json.load(urllib2.urlopen('https://ivle.nus.edu.sg/api/Lapi.svc/Validate?APIKey=' + ivle_api_key + '&Token=' + self.session.get('ivle_token')))['Success']
 
         if self.session.get('is_valid') == True:
+
             template_values = {
                 'student_name' : self.session.get('student_name'),
-                'student_email' : self.session.get('student_email')
+                'student_email' : self.session.get('student_email'),
+                'image' : image
             }
 
             template = jinja_environment.get_template("upload.html")

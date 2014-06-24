@@ -15,6 +15,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -70,40 +71,71 @@
         </div><!--/.nav-collapse -->
     </div>
 </div>
+
+
 <div class="modal fade" id="myModal_url" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Upload Image thru Url</h4>
+          <h4 class="modal-title" id="myModalLabel">Upload Image thru Url</h4>
+          <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        <div class="modal-body">
+
+            <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+
+                <div class="modal-body">
+                    <div class="col-md-10" >
+                        <input id="textinput" name="textinput" type="text" placeholder="Http://" class="form-control input-md">
+
+                    </div>
+                    <br/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </div>
+
+            </form>
+
+        </div>
+
     </div>
   </div>
 </div>
 <div class="modal fade" id="myModal_images" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Upload Image</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Upload Image</h4>
+                <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+
+
+                    <!-- File Button -->
+                    <div class="modal-body">
+                        <div class="col-md-4" >
+                            <input id="filebutton" name="filebutton" class="input-file" type="file" >
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+
+                </form>
+
+            </div>
+
     </div>
   </div>
 </div>
+
+
 <div class="container" style="padding-top:40px;" align="center">
     <div class="posts" style="width:600px;">
         <div class="page-header">
@@ -166,6 +198,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./html/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="../bootstrap/js/jquery.min.js"></script>
 
 </body>
