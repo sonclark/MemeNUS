@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a568df4-9b0b-456f-8eb2-0a6bbb90c535" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memeatnus.py" afterPath="$PROJECT_DIR$/memeatnus.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/upload.html" afterPath="$PROJECT_DIR$/templates/upload.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MEMEATNUS.iws" />
@@ -497,7 +494,11 @@
       <created>1403617197824</created>
       <updated>1403617197824</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update on GET and POST data for uploading.">
+      <created>1403635890036</created>
+      <updated>1403635890036</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -542,7 +543,8 @@
     </option>
     <MESSAGE value="Minor updates on uploading" />
     <MESSAGE value="Fixed home.html for upload bootstrap." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed home.html for upload bootstrap." />
+    <MESSAGE value="Update on GET and POST data for uploading." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update on GET and POST data for uploading." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
