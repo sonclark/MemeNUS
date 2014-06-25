@@ -25,12 +25,14 @@ import HTMLParser
 from webapp2_extras import sessions
 from urlparse import urlparse
 from google.appengine.api import users
+from google.appengine.api import urlfetch
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"), autoescape=True)
 app_domain = "http://memeatnus.appspot.com/"
 #app_domain = "localhost:8080/"
 ivle_api_key = "ph2hxIVG4Fzcr6e8OzZAQ"
+
 
 class BaseHandler(webapp2.RequestHandler):
     def dispatch(self):
@@ -74,10 +76,15 @@ class Welcome(BaseHandler):
     def get(self):
         if self.session.get('is_valid') != True:
             self.session['ivle_token'] = self.request.get('token')
+            #added this to have more time for request
+            urlfetch.set_default_fetch_deadline(45)
             self.session['is_valid'] = json.load(urllib2.urlopen('https://ivle.nus.edu.sg/api/Lapi.svc/Validate?APIKey=' + ivle_api_key + '&Token=' + self.session.get('ivle_token')))['Success']
 
         if self.session.get('is_valid') == True:
+            #added this to have more time for request
+            urlfetch.set_default_fetch_deadline(45)
             student_profile_object = json.load(urllib2.urlopen('https://ivle.nus.edu.sg/api/Lapi.svc/Profile_View?APIKey=' + ivle_api_key + '&AuthToken=' + self.session.get('ivle_token')))['Results'][0]
+
             #self.session['student_id'] = student_profile_object['UserID']
             self.session['student_name'] = student_profile_object['Name']
             self.session['student_email'] = student_profile_object['Email']
