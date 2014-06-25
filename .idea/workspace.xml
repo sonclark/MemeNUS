@@ -61,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="23" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.4675835" vertical-offset="153" max-vertical-offset="3825">
+            <state line="32" column="60" selection-start="1373" selection-end="1373" vertical-scroll-proportion="-6.982143" vertical-offset="153" max-vertical-offset="3825">
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -104,6 +104,15 @@
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#4;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#div#4;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.NobleCount.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bootstrap/js/jquery.NobleCount.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="22" selection-start="144" selection-end="144" vertical-scroll-proportion="0.13203883" vertical-offset="0" max-vertical-offset="8262">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -469,7 +478,11 @@
       <created>1403683617663</created>
       <updated>1403683617663</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added in text area and database.py">
+      <created>1403683653895</created>
+      <updated>1403683653895</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -893,7 +906,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.4675835" vertical-offset="153" max-vertical-offset="3825">
+        <state line="32" column="60" selection-start="1373" selection-end="1373" vertical-scroll-proportion="-6.982143" vertical-offset="153" max-vertical-offset="3825">
           <folding>
             <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -933,6 +946,13 @@
             <element signature="n#style#0;n#div#1;n#div#1;n#div#4;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#div#4;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/js/jquery.NobleCount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="22" selection-start="144" selection-end="144" vertical-scroll-proportion="0.13203883" vertical-offset="0" max-vertical-offset="8262">
+          <folding />
         </state>
       </provider>
     </entry>
