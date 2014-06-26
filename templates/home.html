@@ -11,22 +11,12 @@
     <link href="./html/css/flat-ui.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="../bootstrap/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../bootstrap/js/jquery.NobleCount.js"></script>
-    <script type="text/javascript">
-            $(document).ready(function () {
-                	$('#charcount').NobleCount('#count',{
-                        max_chars: 140
-                    });
-            }
-    </script>
+
+
 
 </head>
 <body>
+
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -42,82 +32,83 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/welcome"><font><font>Home</font></font></a></li>
                 <!--Implement upload page -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Upload </font></font><b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href = "#" data-toggle="modal" data-target="#myModal_url"><font><font>Add from url</font></font></a></li>
-                        <li><a href = "#" data-toggle="modal" data-target="#myModal_images"><font><font>Upload Image</font></font></a></li>
-                        <li><a href="http://memeful.com/?ref=9gag"><font><font>Make a meme</font></font></a></li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Upload </font></font><b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href = "#" data-toggle="modal" data-target="#myModal_url"><font><font>Add from url</font></font></a></li>
+        <li><a href = "#" data-toggle="modal" data-target="#myModal_images"><font><font>Upload Image</font></font></a></li>
+        <li><a href="http://memeful.com/?ref=9gag"><font><font>Make a meme</font></font></a></li>
 
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Links </font></font><b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Http://ivle.nus.edu.sg"><font><font>IVLE</font></font></a></li>
-                        <li><a href="Http://myisis.nus.edu.sg"><font><font>MYISIS</font></font></a></li>
-                        <li><a href="Http://nusmods.com"><font><font>NUSMODS</font></font></a></li>
-                        <li><a href="http://nus-bell-curve-god.appspot.com/"><font><font>PRAY?</font></font></a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header"><font><font>Popular Memes</font></font></li>
-                        <li><a href="#"><font><font>Featured MEME</font></font></a></li>
-                        <li><a href="#"><font><font>Top Rated MEME</font></font></a></li>
-                    </ul>
-                </li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Links </font></font><b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href="Http://ivle.nus.edu.sg"><font><font>IVLE</font></font></a></li>
+        <li><a href="Http://myisis.nus.edu.sg"><font><font>MYISIS</font></font></a></li>
+        <li><a href="Http://nusmods.com"><font><font>NUSMODS</font></font></a></li>
+        <li><a href="http://nus-bell-curve-god.appspot.com/"><font><font>PRAY?</font></font></a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header"><font><font>Popular Memes</font></font></li>
+        <li><a href="#"><font><font>Featured MEME</font></font></a></li>
+        <li><a href="#"><font><font>Top Rated MEME</font></font></a></li>
+    </ul>
+</li>
 
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ student_name }} <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-header">{{ student_email }}</li>
-                        <li class="divider"></li>
-                        <li><a href="/profile">Edit profile</a></li>
-                        <li><a href="/">Log out</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ student_name }} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">{{ student_email }}</li>
+            <li class="divider"></li>
+            <li><a href="/profile">Edit profile</a></li>
+            <li><a href="/">Log out</a></li>
+        </ul>
+    </li>
+</ul>
+</div><!--/.nav-collapse -->
+</div>
 </div>
 
 
 <div class="modal fade" id="myModal_url" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">Upload Image thru Url</h4>
-          <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
-      </div>
-        <div class="modal-body">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Upload Image thru Url</h4>
+                <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
+            </div>
+            <div class="modal-body">
 
-            <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
 
-                <div class="modal-body">
-                    <div class="col-md-10" >
-                        <input id="textinput" name="textinput" type="text" placeholder="Http://" class="form-control input-md">
+                    <div class="modal-body">
+                        <div class="col-md-10" >
+                            <input id="textinput" name="textinput" type="text" placeholder="Http://" class="form-control input-md">
 
+                        </div>
+
+                            <label>Title</label>
+                            <textarea id='test1'></textarea>
+                            <br><span id='count1'></span> characters remaining remaining
+                            <br><hr>
+
+
+                        <br/>
                     </div>
-                    <div>
-                        <label>Title</label>
-                        <p id="count"></p>
-                        <textarea  style="width:100% resize:none" data-maxlength="140" id="charcount"></textarea>
-                        <p id="jsid-upload-title-error" class="error-message hide"></p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
                     </div>
-                    <br/>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Upload</button>
-                </div>
 
-            </form>
+                </form>
+
+            </div>
 
         </div>
-
     </div>
-  </div>
 </div>
 <div class="modal fade" id="myModal_images" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -146,8 +137,8 @@
 
             </div>
 
+        </div>
     </div>
-  </div>
 </div>
 
 
@@ -213,8 +204,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./html/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="../bootstrap/js/jquery.NobleCount.js"></script>
+<script type="text/javascript">
+            $(document).ready(function () {
+                	$('#test1').NobleCount('#count1',{
+                	block_negative: true
+                	});
+            });
 
 
+    </script>
 
 </body>
 </html>

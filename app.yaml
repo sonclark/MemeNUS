@@ -8,14 +8,20 @@ handlers:
 
 - url: /html
   static_dir: html
+
 - url : /html/css
   static_dir: html/css
+
 - url : /html/js
   static_dir: html/js
+
+- url : /bootstrap/js
+  static_dir : bootstrap/js
 
 - url: /.*
   script: memeatnus.app
   secure: always
+
 libraries:
 - name: webapp2
   version: "2.5.2"
