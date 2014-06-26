@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a568df4-9b0b-456f-8eb2-0a6bbb90c535" name="Default" comment="Added in text area and database.py">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/jquery-1.4.2.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.yaml" afterPath="$PROJECT_DIR$/app.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.yaml" afterPath="$PROJECT_DIR$/index.yaml" />
+    <list default="true" id="5a568df4-9b0b-456f-8eb2-0a6bbb90c535" name="Default" comment="Added in noblecount for textarea">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memeatnus.py" afterPath="$PROJECT_DIR$/memeatnus.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MEMEATNUS.iws" />
@@ -39,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memeatnus.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="memeatnus.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memeatnus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="975" selection-end="975" vertical-scroll-proportion="-6.64" vertical-offset="361" max-vertical-offset="2431">
+            <state line="52" column="0" selection-start="1643" selection-end="1643" vertical-scroll-proportion="0.59074074" vertical-offset="565" max-vertical-offset="2431">
               <folding>
                 <element signature="e#597#611#0" expanded="true" />
               </folding>
@@ -71,7 +67,7 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="88" selection-start="4412" selection-end="4412" vertical-scroll-proportion="-3.1785715" vertical-offset="1420" max-vertical-offset="3910">
+            <state line="94" column="88" selection-start="4412" selection-end="4412" vertical-scroll-proportion="-6.821429" vertical-offset="1216" max-vertical-offset="3910">
               <folding>
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -114,15 +110,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.NobleCount.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bootstrap/js/jquery.NobleCount.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8262">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -145,8 +132,8 @@
         <option value="$USER_HOME$/Downloads/NobleCount-master/noblecount.min.demo.html" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/app.yaml" />
-        <option value="$PROJECT_DIR$/memeatnus.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/memeatnus.py" />
       </list>
     </option>
   </component>
@@ -229,38 +216,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MEMEATNUS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MemeNUS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MEMEATNUS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MemeNUS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -279,7 +234,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OpenIdGiftbook" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -507,7 +462,11 @@
       <created>1403683865750</created>
       <updated>1403683865750</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added in noblecount for textarea">
+      <created>1403769005746</created>
+      <updated>1403769005746</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -551,7 +510,8 @@
     <MESSAGE value="Fixed home.html for upload bootstrap." />
     <MESSAGE value="Update on GET and POST data for uploading." />
     <MESSAGE value="Added in text area and database.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added in text area and database.py" />
+    <MESSAGE value="Added in noblecount for textarea" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added in noblecount for textarea" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -921,15 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeatnus.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="975" selection-end="975" vertical-scroll-proportion="-6.64" vertical-offset="361" max-vertical-offset="2431">
-          <folding>
-            <element signature="e#597#611#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="12" selection-start="1334" selection-end="1334" vertical-scroll-proportion="1.3076923" vertical-offset="561" max-vertical-offset="1649">
@@ -944,9 +895,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/js/jquery.NobleCount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8262">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="88" selection-start="4412" selection-end="4412" vertical-scroll-proportion="-3.1785715" vertical-offset="1420" max-vertical-offset="3910">
+        <state line="94" column="88" selection-start="4412" selection-end="4412" vertical-scroll-proportion="-6.821429" vertical-offset="1216" max-vertical-offset="3910">
           <folding>
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -988,10 +946,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/js/jquery.NobleCount.js">
+    <entry file="file://$PROJECT_DIR$/memeatnus.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8262">
-          <folding />
+        <state line="52" column="0" selection-start="1643" selection-end="1643" vertical-scroll-proportion="0.59074074" vertical-offset="565" max-vertical-offset="2431">
+          <folding>
+            <element signature="e#597#611#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
