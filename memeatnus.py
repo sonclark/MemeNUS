@@ -25,113 +25,79 @@ import HTMLParser
 from webapp2_extras import sessions
 from urlparse import urlparse
 from google.appengine.api import users
-from google.appengine.api import urlfetch
+
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"), autoescape=True)
 app_domain = "http://memeatnus.appspot.com/"
-#app_domain = "localhost:8080/"
-ivle_api_key = "ph2hxIVG4Fzcr6e8OzZAQ"
 
-
-class BaseHandler(webapp2.RequestHandler):
-    def dispatch(self):
-        # Get a session store for this request
-        self.session_store = sessions.get_store(request=self.request)
-
-        try:
-            # Dispatch the request
-            webapp2.RequestHandler.dispatch(self)
-        finally:
-            # Save all sessions
-            self.session_store.save_sessions(self.response)
-
-    @webapp2.cached_property
-    def session(self):
-        # Returns a session using the default cookie key
-        return self.session_store.get_session()
-
-config = {}
-
-config['webapp2_extras.sessions'] = {
-    'secret_key': ivle_api_key,
-}
-
-class MainPage(BaseHandler):
+class MainPage(webapp2.RequestHandler):
     def get(self):
-
-        self.session['ivle_token'] = ""
-        self.session['is_valid'] = False
-
-        template_values = {
-            'login_url' : 'https://ivle.nus.edu.sg/api/login/?apikey=' + ivle_api_key + '&url=' +app_domain + 'welcome'
-        }
-
-        template = jinja_environment.get_template('welcome.html')
-        self.response.out.write(template.render(template_values))
-
-
-
-class Welcome(BaseHandler):
-    def get(self):
-        if self.session.get('is_valid') != True:
-            self.session['ivle_token'] = self.request.get('token')
-            #added this to have more time for request
-            urlfetch.set_default_fetch_deadline(45)
-            self.session['is_valid'] = json.load(urllib2.urlopen('https://ivle.nus.edu.sg/api/Lapi.svc/Validate?APIKey=' + ivle_api_key + '&Token=' + self.session.get('ivle_token')))['Success']
-
-        if self.session.get('is_valid') == True:
-            #added this to have more time for request
-            urlfetch.set_default_fetch_deadline(45)
-            student_profile_object = json.load(urllib2.urlopen('https://ivle.nus.edu.sg/api/Lapi.svc/Profile_View?APIKey=' + ivle_api_key + '&AuthToken=' + self.session.get('ivle_token')))['Results'][0]
-
-            #self.session['student_id'] = student_profile_object['UserID']
-            self.session['student_name'] = student_profile_object['Name']
-            self.session['student_email'] = student_profile_object['Email']
-            #self.session['student_matriculation_year'] = student_profile_object['MatriculationYear']
-            #self.session['student_first_major'] = student_profile_object['FirstMajor']
-            #self.session['student_second_major'] = student_profile_object['SecondMajor']
-            #self.session['student_faculty'] = student_profile_object['Faculty']
-
-
+        user = users.get_current_user()
+        #if login already
+        if user:
             template_values = {
-                'student_name' : self.session.get('student_name'),
-                'student_email' : self.session.get('student_email')
+                'user_mail' : users.get_current_user().email(),
+                'user_name' : users.get_current_user().email().split("@")[0],
+                'logout' : users.create_logout_url(self.request.host_url),
+
+            }
+            template = jinja_environment.get_template('home.html')
+            self.response.out.write(template.render(template_values))
+        else :
+            template = jinja_environment.get_template('welcome.html')
+            self.response.out.write(template.render())
+
+
+
+class Welcome(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            template_values = {
+                'user_mail' : users.get_current_user().email(),
+                'user_name' : users.get_current_user().email().split("@")[0],
+                'logout' : users.create_logout_url(self.request.host_url),
+
             }
 
             template = jinja_environment.get_template("home.html")
             self.response.out.write(template.render(template_values))
         else :
-            self.redirect(app_domain)
+            self.redirect(self.request.host_url)
 
-class Upload(BaseHandler):
+class Upload(webapp2.RequestHandler):
     image = ""
     def post(self):
         global image
         image = self.request.get("textinput")
         self.redirect(app_domain + "upload")
     def get(self):
-        if self.session.get('is_valid') != True:
-            self.session['ivle_token'] = self.request.get('token')
-            self.session['is_valid'] = json.load(urllib2.urlopen('https://ivle.nus.edu.sg/api/Lapi.svc/Validate?APIKey=' + ivle_api_key + '&Token=' + self.session.get('ivle_token')))['Success']
-
-        if self.session.get('is_valid') == True:
-
+        user = users.get_current_user()
+        if user:
             template_values = {
-                'student_name' : self.session.get('student_name'),
-                'student_email' : self.session.get('student_email'),
+                'user_mail' : users.get_current_user().email(),
+                'user_name' : users.get_current_user().email().split("@")[0],
+                'logout' : users.create_logout_url(self.request.host_url),
                 'image' : image
             }
 
             template = jinja_environment.get_template("upload.html")
             self.response.out.write(template.render(template_values))
         else :
-            self.redirect(app_domain)
+            self.redirect(self.request.host_url)
+
+
+class GetOpenId(webapp2.RequestHandler):
+    def post(self):
+        openId = self.request.get('openId').rstrip()
+        self.redirect(users.create_login_url('/',None, federated_identity=openId))
 
 app = webapp2.WSGIApplication([
                                   ('/', MainPage),
                                   ('/welcome', Welcome),
-                                  ('/upload', Upload)
+                                  ('/upload', Upload),
+                                  ('/getOpenId', GetOpenId),
+
                                   ],
-                              config = config,
-                                        debug=True)
+                                    debug=True)

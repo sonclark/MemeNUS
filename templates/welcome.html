@@ -25,7 +25,9 @@
 
           </div>
           <div class="navbar-form navbar-right">
-              <a class="btn btn-primary" style="background:none; border:2px solid #15D6BB;" href="{{ login_url }}">Sign in with NUSNET ID</a>
+              <form action="/getOpenId" method="post">
+                  <button type="submit" name="openId" value="https://openid.nus.edu.sg" class="btn btn-primary" style="background:none; border:2px solid #15D6BB;">Sign in with NUSNET ID</button>
+              </form>
           </div>
           <div>
           </div><!--/.nav-collapse -->
@@ -36,7 +38,12 @@
         <div class="jumbotron">
             <h1><font><font>Welcome to Meme@NUS</font></font></h1>
             <p><font><font>This is a place for you to relax after a long hour of study. Gags and fun exclusively for NUS Students.</font></font></p>
-            <p><a href="{{login_url}}" class="btn btn-primary btn-lg" role="button"><font><font>Login with IVLE</font></font></a></p>
+            <p>
+            <form action = "/getOpenId" method="post">
+                <button name="openId" value="https://openid.nus.edu.sg" class="btn btn-primary btn-lg" type = "submit"><font><font>Login with IVLE</font></font></button>
+            </form>
+            </p>
+
         </div>
     </div>
 
@@ -59,7 +66,9 @@
             <h1><font><font>How to login?</font></font></h1>
             <p><font><font>No registration is needed (Hassle free :)) , just login with IVLE account and everything is ready to GO!</font></font></p>
             <div class="centered">
-                <p><a href="{{login_url}}" class="btn btn-primary btn-lg" role="button"><font><font>LOGIN NOW!</font></font></a></p>
+                <form action = "/getOpenId" method="post">
+                    <button name="openId" value="https://openid.nus.edu.sg" class="btn btn-primary btn-lg" type = "submit"><font><font>Login now with IVLE!</font></font></button>
+                </form>
             </div>
         </div>
     </div>
