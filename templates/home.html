@@ -26,11 +26,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/welcome"><font><font>Meme@NUS</font></font></a>
+            <a class="navbar-brand" href="/"><font><font>Meme@NUS</font></font></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/welcome"><font><font>Home</font></font></a></li>
+                <li class="active"><a href="/"><font><font>Home</font></font></a></li>
                 <!--Implement upload page -->
 <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Upload </font></font><b class="caret"></b></a>
@@ -63,6 +63,7 @@
             <li class="dropdown-header">{{ user_mail }}</li>
             <li class="divider"></li>
             <li><a href="/profile">Edit profile</a></li>
+            <li><a href="/upload">Uploaded Images</a></li>
             <li><a href={{ logout }}>Log out</a></li>
         </ul>
     </li>
@@ -143,60 +144,26 @@
 
 
 <div class="container" style="padding-top:40px;" align="center">
-    <div class="posts" style="width:600px;">
-        <div class="page-header">
-            <h1>Picture name</h1>
-        </div>
-        <img class="img-thumbnail"  style="width: 550px; height: 350px;">
-        <div class="row" style="width:550px;padding-top:15px;">
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-        </div>
-    </div>
 
-    <div class="posts" style="width:600px;">
-        <div class="page-header">
-            <h1>Picture name</h1>
-        </div>
-        <img class="img-thumbnail"  style="width: 550px; height: 350px;">
-        <div class="row" style="width:550px;padding-top:15px;">
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-        </div>
-    </div>
+    {% for item in items %}
+		<div class="posts" style="width:600px;">
+			<div class="page-header">
+				<h1>{{ item.description }}</h1>
+			</div>
+			<img class="img-thumbnail"  style="width: 550px; height: 350px;" src="{{ item.image_link }}" >
 
-    <div class="posts" style="width:600px;">
-        <div class="page-header">
-            <h1>Picture name</h1>
-        </div>
-        <img class="img-thumbnail"  style="width: 550px; height: 350px;">
-        <div class="row" style="width:550px;padding-top:15px;">
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-        </div>
-    </div>
+            <!-- Time might use moment.js we shall see
+            <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
+            <div class="row" style="width:550px;padding-top:15px;">
+				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
+				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
+			</div>
+		</div>
+    {% endfor %}
 
-    <div class="posts" style="width:600px;">
-        <div class="page-header">
-            <h1>Picture name</h1>
-        </div>
-        <img class="img-thumbnail"  style="width: 550px; height: 350px;">
-        <div class="row" style="width:550px;padding-top:15px;">
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-        </div>
-    </div>
 
-    <div class="posts" style="width:600px;">
-        <div class="page-header">
-            <h1>Picture name</h1>
-        </div>
-        <img class="img-thumbnail"  style="width: 550px; height: 350px;">
-        <div class="row" style="width:550px;padding-top:15px;">
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-        </div>
-    </div>
+
+
 
 
 </div>
@@ -216,6 +183,7 @@
                 	$('#test1').NobleCount('#count1',{
                 	block_negative: true
                 	});
+
             });
 
 

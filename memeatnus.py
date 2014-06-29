@@ -27,6 +27,8 @@ from urlparse import urlparse
 from google.appengine.api import users
 from google.appengine.ext import ndb
 
+
+
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"), autoescape=True)
 app_domain = "http://memeatnus.appspot.com/"
@@ -36,12 +38,17 @@ class MainPage(webapp2.RequestHandler):
         user = users.get_current_user()
         #if login already
         if user:
+            query = ndb.gql("SELECT * "
+                            "FROM Images "
+                            )
+
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
-
+                'items' : query,
             }
+
             template = jinja_environment.get_template('home.html')
             self.response.out.write(template.render(template_values))
         else :
@@ -49,21 +56,26 @@ class MainPage(webapp2.RequestHandler):
             self.response.out.write(template.render())
 
 
-class Welcome(webapp2.RequestHandler):
-    def get(self):
-        user = users.get_current_user()
-        if user:
-            template_values = {
-                'user_mail' : users.get_current_user().email(),
-                'user_name' : users.get_current_user().email().split("@")[0],
-                'logout' : users.create_logout_url(self.request.host_url),
-
-            }
-
-            template = jinja_environment.get_template("home.html")
-            self.response.out.write(template.render(template_values))
-        else :
-            self.redirect(self.request.host_url)
+# class Welcome(webapp2.RequestHandler):
+#     def get(self):
+#         user = users.get_current_user()
+#         if user:
+#
+#             query = ndb.gql("SELECT * "
+#                             "FROM Images "
+#                             )
+#
+#             template_values = {
+#                 'user_mail' : users.get_current_user().email(),
+#                 'user_name' : users.get_current_user().email().split("@")[0],
+#                 'logout' : users.create_logout_url(self.request.host_url),
+#                 'items' : query,
+#             }
+#
+#             template = jinja_environment.get_template("home.html")
+#             self.response.out.write(template.render(template_values))
+#         else :
+#             self.redirect(self.request.host_url)
 
 class Persons(ndb.Model):
     next_item = ndb.IntegerProperty()
@@ -126,6 +138,14 @@ class Upload(webapp2.RequestHandler):
         else :
             self.redirect(self.request.host_url)
 
+class DeleteItem(webapp2.RequestHandler):
+    # Delete item specified by user
+
+    def post(self):
+        item = ndb.Key('Persons', users.get_current_user().email(), 'Images', self.request.get('itemid'))
+        item.delete()
+        self.redirect('/upload')
+
 
 class GetOpenId(webapp2.RequestHandler):
     def post(self):
@@ -134,7 +154,8 @@ class GetOpenId(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
                                   ('/', MainPage),
-                                  ('/welcome', Welcome),
+                                  ('/deleteitem', DeleteItem),
+                                  #('/welcome', Welcome),
                                   ('/upload', Upload),
                                   ('/getOpenId', GetOpenId),
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,38 +8,40 @@
 
     <!-- Bootstrap -->
     <link href="./html/css/bootstrap.css" rel="stylesheet">
-	<link href="./html/css/flat-ui.css" rel="stylesheet">
+    <link href="./html/css/flat-ui.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only"><font><font>Toggle navigation</font></font></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/welcome"><font><font>Meme@NUS</font></font></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only"><font><font>Toggle navigation</font></font></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><font><font>Meme@NUS</font></font></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/welcome"><font><font>Home</font></font></a></li>
+                <li><a href="/"><font><font>Home</font></font></a></li>
                 <!--Implement upload page -->
-                <li class="dropdown">
+                <li class="active">
+
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Upload </font></font><b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/upload"><font><font>Add from url</font></font></a></li>
-                        <li><a href="/upload"><font><font>Upload Image</font></font></a></li>
+                        <li><a href = "#" data-toggle="modal" data-target="#myModal_url"><font><font>Add from url</font></font></a></li>
+                        <li><a href = "#" data-toggle="modal" data-target="#myModal_images"><font><font>Upload Image</font></font></a></li>
                         <li><a href="http://memeful.com/?ref=9gag"><font><font>Make a meme</font></font></a></li>
 
                     </ul>
+
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Links </font></font><b class="caret"></b></a>
@@ -63,37 +65,140 @@
                         <li class="dropdown-header">{{ user_email }}</li>
                         <li class="divider"></li>
                         <li><a href="/profile">Edit profile</a></li>
+                        <li><a href="/upload">Uploaded Images</a></li>
                         <li><a href="{{ logout }}">Log out</a></li>
                     </ul>
                 </li>
             </ul>
         </div><!--/.nav-collapse -->
-      </div>
     </div>
-	 <div class="container" style="padding-top:40px;" align="center">
+</div>
 
-		{% for item in items %}
-		<div class="posts" style="width:600px;">
-			<div class="page-header">
-				<h1>{{ item.description }}</h1>
-			</div>
-			<img class="img-thumbnail"  style="width: 550px; height: 350px;" src="{{ item.image_link }}" >
-            <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>
+<div class="modal fade" id="myModal_url" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Upload Image thru Url</h4>
+                <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+
+                    <div class="modal-body">
+                        <div class="col-md-10" >
+                            <input id="textinput" name="textinput" type="text" placeholder="Http://" class="form-control input-md">
+
+                        </div>
+
+                        <label>Title</label>
+                        <textarea id='test1' name="test1"></textarea>
+                        <br><span id='count1'></span> characters remaining remaining
+                        <br><hr>
+
+
+                        <br/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal_images" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Upload Image</h4>
+                <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+
+
+                    <!-- File Button -->
+                    <div class="modal-body">
+                        <div class="col-md-4" >
+                            <input id="filebutton" name="filebutton" class="input-file" type="file" >
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container" style="padding-top:40px;" align="center">
+
+    {% for item in items %}
+
+        <div class="posts" style="width:600px;">
+            <div class="page-header">
+                <h1>{{ item.description }}</h1>
+            </div>
+            <img class="img-thumbnail"  style="width: 550px; height: 350px;" src="{{ item.image_link }}">
             <div class="row" style="width:550px;padding-top:15px;">
-				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-			</div>
-		</div>
-        {% endfor %}
-
-
-	</div>
+                <div class="col-xs-3 pull-right"><button class="btn btn-block btn-lg btn-danger" data-toggle="modal" data-target = "#myModal_delete">Delete</button></div>
+            </div>
+        </div>
 
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="./html/js/bootstrap.min.js"></script>
-  </body>
+    <div class="modal fade" id="myModal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Delete</h4>
+
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal well" method="post" action="/deleteitem" id="modal-form">
+
+
+                        <!-- File Button -->
+                        <div class="modal-body">
+                            <div class="col-md-4" >
+                                Are you sure?
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <input type="hidden" name="itemid" value="{{ item.item_id }}">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                            <button type="submit" class="btn btn-primary" value="Delete">Yes</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./html/js/bootstrap.min.js"></script>
+</body>
 </html>
