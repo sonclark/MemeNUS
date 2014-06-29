@@ -58,35 +58,39 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ student_name }} <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user_name }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-header">{{ student_email }}</li>
+                        <li class="dropdown-header">{{ user_email }}</li>
                         <li class="divider"></li>
                         <li><a href="/profile">Edit profile</a></li>
-                        <li><a href="/">Log out</a></li>
+                        <li><a href="{{ logout }}">Log out</a></li>
                     </ul>
                 </li>
             </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
-	<div class="container" style="padding-top:40px;" align="center">
+	 <div class="container" style="padding-top:40px;" align="center">
 
-		
+		{% for item in items %}
 		<div class="posts" style="width:600px;">
 			<div class="page-header">
-				<h1>Picture name</h1>
+				<h1>{{ item.description }}</h1>
 			</div>
-			<img class="img-thumbnail"  style="width: 550px; height: 350px;" >
-			<div>{{ image }}</div>
+			<img class="img-thumbnail"  style="width: 550px; height: 350px;" src="{{ item.image_link }}" >
+            <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>
             <div class="row" style="width:550px;padding-top:15px;">
 				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
 				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
 			</div>
 		</div>
-		
-		
+        {% endfor %}
+
+
 	</div>
+
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

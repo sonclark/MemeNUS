@@ -25,7 +25,7 @@ import HTMLParser
 from webapp2_extras import sessions
 from urlparse import urlparse
 from google.appengine.api import users
-
+from google.appengine.ext import ndb
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"), autoescape=True)
@@ -49,7 +49,6 @@ class MainPage(webapp2.RequestHandler):
             self.response.out.write(template.render())
 
 
-
 class Welcome(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -66,20 +65,60 @@ class Welcome(webapp2.RequestHandler):
         else :
             self.redirect(self.request.host_url)
 
+class Persons(ndb.Model):
+    next_item = ndb.IntegerProperty()
+
+class Images(ndb.Model):
+    #Models an item with item_link, image_link, description, and date. Key is item_id.
+    item_id = ndb.IntegerProperty()
+    image_link =  ndb.StringProperty()
+    description = ndb.TextProperty()
+    #image = ndb.BlobKeyProperty
+    date = ndb.DateTimeProperty(auto_now_add=True)
+
+
 class Upload(webapp2.RequestHandler):
-    image = ""
     def post(self):
-        global image
-        image = self.request.get("textinput")
+        #retrieve person
+        parent = ndb.Key('Persons', users.get_current_user().email())
+        person = parent.get()
+
+        #If no such user in DB, create that user
+        if person == None:
+            person = Persons(id=users.get_current_user().email())
+            person.next_item = 1
+
+        image = Images(parent=parent, id = str(person.next_item))
+        image.item_id = person.next_item
+
+        image.image_link = self.request.get("textinput")
+        image.description = self.request.get("test1")
+
+        if image.image_link.rstrip() != '' :
+            person.next_item +=1
+            person.put()
+            image.put()
         self.redirect(app_domain + "upload")
+
+
     def get(self):
+        self.show()
+
+    def show(self):
         user = users.get_current_user()
         if user:
+
+            parent_key = ndb.Key('Persons', users.get_current_user().email())
+            query = ndb.gql("SELECT * "
+                            "FROM Images "
+                            "WHERE ANCESTOR IS :1 "
+                            "ORDER BY date DESC",
+                            parent_key)
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
-                'image' : image
+                'items' : query
             }
 
             template = jinja_environment.get_template("upload.html")

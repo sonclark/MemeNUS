@@ -7,5 +7,5 @@ class Profile(ndb.Model):
 class Picture(ndb.Model):
     images = ndb.BlobKeyProperty(requiried = True)
 
-    comments = ndb.TextProperty
-    likes = ndb.IntegerProperty
+#    comments = ndb.TextProperty
+#    likes = ndb.IntegerProperty
