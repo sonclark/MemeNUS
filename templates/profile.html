@@ -26,11 +26,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><font><font>Meme@NUS</font></font></a>
+            <a class="navbar-brand" href="/welcome"><font><font>Meme@NUS</font></font></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/"><font><font>Home</font></font></a></li>
+                <li class="active"><a href="/welcome"><font><font>Home</font></font></a></li>
                 <!--Implement upload page -->
 <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Upload </font></font><b class="caret"></b></a>
@@ -62,8 +62,7 @@
         <ul class="dropdown-menu">
             <li class="dropdown-header">{{ user_mail }}</li>
             <li class="divider"></li>
-            <li><a href="/profile">Edit profile</a></li>
-            <li><a href="/upload">Uploaded Images</a></li>
+            <li><a href="profile.html">Edit profile</a></li>
             <li><a href={{ logout }}>Log out</a></li>
         </ul>
     </li>
@@ -72,6 +71,35 @@
 </div>
 </div>
 
+<div class="container" style="padding-top:150px;">
+  <div class="row">
+  	<div class="col-md-6">
+    
+      <div class="panel panel-default">
+			<div class="panel-body">
+              		<div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <h2>Name</h2>
+                            <p><strong>About: </strong> Whatever </p>
+                            <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+							<p><strong>Course: </strong> Some course </p>
+                        </div><!--/col-->          
+                        <div class="col-xs-12 col-sm-4 text-center">
+                                <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive">
+								<div class="col-xs-12 col-sm-4">
+                            <h2><strong>43</strong></h2>                    
+                            <p><small>Posts</small></p>
+							</div><!--/col-->
+                        </div><!--/col-->
+              		</div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
+
+    
+    
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" id="myModal_url" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -143,28 +171,6 @@
 </div>
 
 
-<div class="container" style="padding-top:40px;" align="center">
-
-    {% for item in items %}
-		<div class="posts" style="width:600px;">
-			<div class="page-header">
-				<h1>{{ item.description }}</h1>
-			</div>
-			<img class="img-thumbnail"  style="width: 550px; height: 350px;" src="{{ item.image_link }}" >
-
-            <!-- Time might use moment.js we shall see
-            <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
-            <div class="row" style="width:550px;padding-top:15px;">
-				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-			</div>
-		</div>
-    {% endfor %}
-
-
-
-
-
 
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -183,7 +189,6 @@
                 	$('#test1').NobleCount('#count1',{
                 	block_negative: true
                 	});
-
             });
 
 
