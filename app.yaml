@@ -20,7 +20,7 @@ handlers:
 
 - url: /.*
   script: memeatnus.app
-  secure: always
+
 
 libraries:
 - name: webapp2
