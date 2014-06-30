@@ -156,12 +156,26 @@ class Profile(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
+
+            parent_key = ndb.Key('Persons', users.get_current_user().email())
+            query = ndb.gql("SELECT * "
+                            "FROM Images "
+                            "WHERE ANCESTOR IS :1 "
+                            "ORDER BY date DESC",
+                            parent_key)
+
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
+                'items' : query.count()
 
             }
+            template = jinja_environment.get_template("profile.html")
+            self.response.out.write(template.render(template_values))
+        else :
+            self.redirect(self.request.host_url)
+
 app = webapp2.WSGIApplication([
                                   ('/', MainPage),
                                   ('/deleteitem', DeleteItem),

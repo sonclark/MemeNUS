@@ -152,13 +152,13 @@
             </div>
             <img class="img-thumbnail"  style="max-width:100%;width: auto\9; height: auto;" src="{{ item.image_link }}">
             <div class="row" style="width:550px;padding-top:15px;">
-                <div class="col-xs-3 pull-right"><button class="btn btn-block btn-lg btn-danger" data-toggle="modal" data-target = "#myModal_delete">Delete</button></div>
+                <div class="col-xs-3 pull-right"><button class="btn btn-block btn-lg btn-danger" data-toggle="modal" data-target = "#{{item.item_id}}">Delete</button></div>
             </div>
         </div>
 
 
 
-    <div class="modal fade" id="myModal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="{{item.item_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
