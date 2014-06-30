@@ -152,11 +152,22 @@ class GetOpenId(webapp2.RequestHandler):
         openId = self.request.get('openId').rstrip()
         self.redirect(users.create_login_url('/',None, federated_identity=openId))
 
+class Profile(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+            template_values = {
+                'user_mail' : users.get_current_user().email(),
+                'user_name' : users.get_current_user().email().split("@")[0],
+                'logout' : users.create_logout_url(self.request.host_url),
+
+            }
 app = webapp2.WSGIApplication([
                                   ('/', MainPage),
                                   ('/deleteitem', DeleteItem),
                                   #('/welcome', Welcome),
                                   ('/upload', Upload),
+                                  ('/profile', Profile),
                                   ('/getOpenId', GetOpenId),
 
                                   ],
