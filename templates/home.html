@@ -11,7 +11,13 @@
     <link href="./html/css/flat-ui.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
+    <script type="text/javascript">
+        // Popup window code
+        function newPopup(url) {
+	        popupWindow = window.open(
+		        url,'popUpWindow','height=350,width=500,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+        }
+    </script>
 
 
 </head>
@@ -155,9 +161,11 @@
             <!-- Time might use moment.js we shall see
             <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
             <div class="row" style="width:550px;padding-top:15px;">
-				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-				<div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-			</div>
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
+                <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
+            </div>
+
 		</div>
     {% endfor %}
 

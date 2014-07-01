@@ -11,10 +11,14 @@
     <link href="./html/css/flat-ui.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+    <script type="text/javascript">
+        // Popup window code
+        function newPopup(url) {
+	        popupWindow = window.open(
+		        url,'popUpWindow','height=350,width=500,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+        }
+      </script>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -152,6 +156,7 @@
             </div>
             <img class="img-thumbnail"  style="max-width:100%;width: auto\9; height: auto;" src="{{ item.image_link }}">
             <div class="row" style="width:550px;padding-top:15px;">
+                <div style="float:left;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
                 <div class="col-xs-3 pull-right"><button class="btn btn-block btn-lg btn-danger" data-toggle="modal" data-target = "#{{item.item_id}}">Delete</button></div>
             </div>
         </div>
@@ -200,5 +205,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./html/js/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
 </body>
 </html>
