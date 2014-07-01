@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<?php
+	function curPageURL() {
+	 $pageURL = 'http';
+	 if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+	 $pageURL .= "://";
+	 if ($_SERVER["SERVER_PORT"] != "80") {
+	  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	 } else {
+	  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	 }
+	 return $pageURL;
+	}
+	?>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>Meme@NUS</title>
+
+    <!-- Bootstrap -->
+    <link href="../html/css/bootstrap.css" rel="stylesheet">
+    <link href="../html/css/flat-ui.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	
+	<script type="text/javascript">
+// Popup window code
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=350,width=500,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
+</script>
+
+</head>
+<body>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only"><font><font>Toggle navigation</font></font></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/welcome"><font><font>Meme@NUS</font></font></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/welcome"><font><font>Home</font></font></a></li>
+                <!--Implement upload page -->
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Upload </font></font><b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href = "#" data-toggle="modal" data-target="#myModal_url"><font><font>Add from url</font></font></a></li>
+        <li><a href = "#" data-toggle="modal" data-target="#myModal_images"><font><font>Upload Image</font></font></a></li>
+        <li><a href="http://memeful.com/?ref=9gag"><font><font>Make a meme</font></font></a></li>
+
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Links </font></font><b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href="Http://ivle.nus.edu.sg"><font><font>IVLE</font></font></a></li>
+        <li><a href="Http://myisis.nus.edu.sg"><font><font>MYISIS</font></font></a></li>
+        <li><a href="Http://nusmods.com"><font><font>NUSMODS</font></font></a></li>
+        <li><a href="http://nus-bell-curve-god.appspot.com/"><font><font>PRAY?</font></font></a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header"><font><font>Popular Memes</font></font></li>
+        <li><a href="#"><font><font>Featured MEME</font></font></a></li>
+        <li><a href="#"><font><font>Top Rated MEME</font></font></a></li>
+    </ul>
+</li>
+
+</ul>
+<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-user"></span>{{ user_name }} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">{{ user_mail }}</li>
+            <li class="divider"></li>
+            <li><a href="profile.html">Edit profile</a></li>
+            <li><a href={{ logout }}>Log out</a></li>
+        </ul>
+    </li>
+</ul>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+
+
+<div class="modal fade" id="myModal_url" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Upload Image thru Url</h4>
+                <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+
+                    <div class="modal-body">
+                        <div class="col-md-10" >
+                            <input id="textinput" name="textinput" type="text" placeholder="Http://" class="form-control input-md">
+
+                        </div>
+
+                            <label>Title</label>
+                            <textarea id='test1' name="test1"></textarea>
+                            <br><span id='count1'></span> characters remaining remaining
+                            <br><hr>
+
+
+                        <br/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal_images" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Upload Image</h4>
+                <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+
+
+                    <!-- File Button -->
+                    <div class="modal-body">
+                        <div class="col-md-4" >
+                            <input id="filebutton" name="filebutton" class="input-file" type="file" >
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="padding-top:40px;" align="center">
+    <div class="posts" style="width:600px;">
+        <div class="page-header">
+            <h1>Picture name</h1>
+			<p class="post-data"> <a>points</a> - <a>comments</a> </p>
+        </div>
+        <img class="img-thumbnail"  style="width: 550px; height: 350px;">
+        <div class="row" style="width:550px;padding-top:15px;">
+            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
+            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
+			
+			<?php $link ='https://www.facebook.com/sharer/sharer.php?u='.curPageURL();?>
+			
+			<div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u=example.org');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a>
+		</div>
+		
+
+ 
+		</div>
+    </div>
+</div>
+
+
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./html/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="../bootstrap/js/jquery.NobleCount.js"></script>
+<script type="text/javascript">
+            $(document).ready(function () {
+                	$('#test1').NobleCount('#count1',{
+                	block_negative: true
+                	});
+            });
+
+
+    </script>
+
+</body>
+</html>
