@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a568df4-9b0b-456f-8eb2-0a6bbb90c535" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memeatnus.py" afterPath="$PROJECT_DIR$/memeatnus.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/upload.html" afterPath="$PROJECT_DIR$/templates/upload.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MEMEATNUS.iws" />
@@ -28,8 +30,10 @@
       <file leaf-file-name="welcome.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="160" selection-start="1323" selection-end="1323" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1802">
-              <folding />
+            <state line="55" column="10" selection-start="2113" selection-end="2474" vertical-scroll-proportion="-12.423077" vertical-offset="612" max-vertical-offset="1802">
+              <folding>
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,7 +41,7 @@
       <file leaf-file-name="memeatnus.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memeatnus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="14" selection-start="1722" selection-end="1722" vertical-scroll-proportion="6.84" vertical-offset="885" max-vertical-offset="3111">
+            <state line="127" column="39" selection-start="4165" selection-end="4165" vertical-scroll-proportion="-13.24" vertical-offset="1641" max-vertical-offset="3128">
               <folding />
             </state>
           </provider>
@@ -71,7 +75,7 @@
       <file leaf-file-name="upload.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/upload.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="211" column="16" selection-start="9788" selection-end="9788" vertical-scroll-proportion="1.2728395" vertical-offset="2556" max-vertical-offset="3723">
+            <state line="153" column="0" selection-start="7117" selection-end="7117" vertical-scroll-proportion="0.20246914" vertical-offset="2437" max-vertical-offset="3910">
               <folding>
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -79,6 +83,7 @@
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,11 +131,11 @@
         <option value="$PROJECT_DIR$/app.yaml" />
         <option value="$PROJECT_DIR$/datastore.py" />
         <option value="$PROJECT_DIR$/index.yaml" />
-        <option value="$PROJECT_DIR$/memeatnus.py" />
         <option value="$PROJECT_DIR$/templates/profile.html" />
         <option value="$PROJECT_DIR$/templates/welcome.html" />
         <option value="$PROJECT_DIR$/templates/details.html" />
         <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/memeatnus.py" />
         <option value="$PROJECT_DIR$/templates/upload.html" />
       </list>
     </option>
@@ -492,7 +497,11 @@
       <created>1404199757066</created>
       <updated>1404199757066</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added facebook share button and some minor updates.">
+      <created>1404199802082</created>
+      <updated>1404199802082</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -542,7 +551,8 @@
     <MESSAGE value="Added routing to profile." />
     <MESSAGE value="Fixed a bug with deletion." />
     <MESSAGE value="Linking of pages for profile.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Linking of pages for profile.html" />
+    <MESSAGE value="Added facebook share button and some minor updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added facebook share button and some minor updates." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -581,7 +591,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -616,7 +628,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -651,7 +665,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -672,6 +688,7 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -693,7 +710,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +740,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -761,7 +782,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -785,7 +808,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -804,7 +829,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -823,7 +850,9 @@
     <entry file="file://$PROJECT_DIR$/templates/welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -888,33 +917,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeatnus.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="14" selection-start="1722" selection-end="1722" vertical-scroll-proportion="6.84" vertical-offset="885" max-vertical-offset="3111">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="192" column="15" selection-start="8378" selection-end="8378" vertical-scroll-proportion="-125.53846" vertical-offset="0" max-vertical-offset="3468">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="5495" selection-end="5495" vertical-scroll-proportion="-5.8846154" vertical-offset="1989" max-vertical-offset="3672">
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="160" selection-start="1323" selection-end="1323" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1802">
           <folding />
         </state>
       </provider>
@@ -933,9 +938,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="10" selection-start="2113" selection-end="2474" vertical-scroll-proportion="-12.423077" vertical-offset="612" max-vertical-offset="1802">
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="0" selection-start="5495" selection-end="5495" vertical-scroll-proportion="-5.8846154" vertical-offset="1989" max-vertical-offset="3672">
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeatnus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="39" selection-start="4165" selection-end="4165" vertical-scroll-proportion="-13.24" vertical-offset="1641" max-vertical-offset="3128">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/upload.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="16" selection-start="9788" selection-end="9788" vertical-scroll-proportion="1.2728395" vertical-offset="2556" max-vertical-offset="3723">
+        <state line="153" column="0" selection-start="7117" selection-end="7117" vertical-scroll-proportion="0.20246914" vertical-offset="2437" max-vertical-offset="3910">
           <folding>
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -943,6 +974,7 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

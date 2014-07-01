@@ -148,7 +148,11 @@
 </div>
 <div class="container" style="padding-top:40px;" align="center">
 
-    {% for item in items %}
+
+
+    {% if items_num > 0 %}
+
+        {% for item in items %}
 
         <div class="posts" style="width:600px;">
             <div class="page-header">
@@ -195,8 +199,15 @@
             </div>
         </div>
     </div>
-{% endfor %}
-
+        {% endfor %}
+    {% else %}
+        <div class="container theme-showcase" style="padding-top:300px;" role="main">
+            <div class="jumbotron">
+                <h1><font><font>No pitures :(</font></font></h1>
+                <p><font><font>You did no upload any pictures. Try uploading one :) By pressing the upload button</font></font></p>
+            </div>
+        </div>
+    {% endif %}
 </div>
 
 

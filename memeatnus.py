@@ -130,7 +130,8 @@ class Upload(webapp2.RequestHandler):
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
-                'items' : query
+                'items' : query,
+                'items_num' : query.count(),
             }
 
             template = jinja_environment.get_template("upload.html")
