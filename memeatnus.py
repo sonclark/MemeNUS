@@ -42,13 +42,18 @@ class MainPage(webapp2.RequestHandler):
         if user:
             query = ndb.gql("SELECT * "
                             "FROM Images "
+                            "ORDER BY date DESC "
                             )
+            query2 = ndb.gql("SELECT * "
+                             "FROM Images2 "
+                             "ORDER BY date DESC")
 
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
                 'items' : query,
+                'items2' : query2,
             }
 
             template = jinja_environment.get_template('home.html')
@@ -174,6 +179,7 @@ class DeleteItem_images(webapp2.RequestHandler):
     def post(self):
         item = ndb.Key('Persons', users.get_current_user().email(), 'Images2', self.request.get('itemid'))
         item.delete()
+        blobstore.delete(self.request.get('blobkey'))
         self.redirect('/upload')
 
 class GetOpenId(webapp2.RequestHandler):

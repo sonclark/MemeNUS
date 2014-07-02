@@ -126,7 +126,7 @@
                 <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+                <form class="form-horizontal well" enctype="multipart/form-data" method="post" action="{{upload_url}}" id="modal-form">
 
 
                     <!-- File Button -->
@@ -134,7 +134,16 @@
                         <div class="col-md-4" >
                             <input id="filebutton" name="filebutton" class="input-file" type="file" >
                         </div>
+
                     </div>
+
+                    <label>Title</label>
+                    <textarea id='test2' name="test2"></textarea>
+                    <br><span id='count2'></span> characters remaining remaining
+                    <br><hr>
+
+
+                    <br/>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Upload</button>
@@ -169,6 +178,24 @@
 		</div>
     {% endfor %}
 
+{% for item in items2 %}
+		<div class="posts" style="width:600px;">
+			<div class="page-header">
+				<h1>{{ item.description }}</h1>
+			</div>
+			<img class="img-thumbnail"  style="max-width: 100%; width: auto\9; height: auto;" src="{{ item.servingUrl }}" >
+
+            <!-- Time might use moment.js we shall see
+            <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
+            <div class="row" style="width:550px;padding-top:15px;">
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
+                <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.servingUrl }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
+            </div>
+
+		</div>
+    {% endfor %}
+
 
 
 
@@ -191,7 +218,9 @@
                 	$('#test1').NobleCount('#count1',{
                 	block_negative: true
                 	});
-
+                    $('#test2').NobleCount('#count2',{
+                	block_negative: true
+                	});
             });
 
 

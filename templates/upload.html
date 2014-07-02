@@ -208,7 +208,7 @@
     {% elif items_num == 0 and pic_num == 0 %}
         <div class="container theme-showcase" style="padding-top:300px;" role="main">
             <div class="jumbotron">
-                <h1><font><font>No pitures :(</font></font></h1>
+                <h1><font><font>No pictures :(</font></font></h1>
                 <p><font><font>You did no upload any pictures. Try uploading one :) By pressing the upload button</font></font></p>
             </div>
         </div>
@@ -252,6 +252,7 @@
                         <div class="modal-footer">
 
                             <input type="hidden" name="itemid" value="{{ pics.item_id }}">
+                            <input type="hidden" name="blobkey" value="{{ pics.image_key }}">
                             <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                             <button type="submit" class="btn btn-primary" value="Delete">Yes</button>
                         </div>
