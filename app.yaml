@@ -21,6 +21,8 @@ handlers:
 - url: /.*
   script: memeatnus.app
 
+- url : /_ah/upload/.+
+  script: memeatnus.app
 
 libraries:
 - name: webapp2

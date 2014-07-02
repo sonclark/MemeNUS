@@ -14,3 +14,9 @@ indexes:
   properties:
   - name: date
     direction: desc
+
+- kind: Images2
+  ancestor: yes
+  properties:
+  - name: date
+    direction: desc

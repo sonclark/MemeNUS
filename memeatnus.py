@@ -26,7 +26,9 @@ from webapp2_extras import sessions
 from urlparse import urlparse
 from google.appengine.api import users
 from google.appengine.ext import ndb
-
+from google.appengine.ext import blobstore
+from google.appengine.ext.webapp import blobstore_handlers
+from google.appengine.api import images
 
 
 jinja_environment = jinja2.Environment(
@@ -55,28 +57,6 @@ class MainPage(webapp2.RequestHandler):
             template = jinja_environment.get_template('welcome.html')
             self.response.out.write(template.render())
 
-
-# class Welcome(webapp2.RequestHandler):
-#     def get(self):
-#         user = users.get_current_user()
-#         if user:
-#
-#             query = ndb.gql("SELECT * "
-#                             "FROM Images "
-#                             )
-#
-#             template_values = {
-#                 'user_mail' : users.get_current_user().email(),
-#                 'user_name' : users.get_current_user().email().split("@")[0],
-#                 'logout' : users.create_logout_url(self.request.host_url),
-#                 'items' : query,
-#             }
-#
-#             template = jinja_environment.get_template("home.html")
-#             self.response.out.write(template.render(template_values))
-#         else :
-#             self.redirect(self.request.host_url)
-
 class Persons(ndb.Model):
     next_item = ndb.IntegerProperty()
 
@@ -88,6 +68,34 @@ class Images(ndb.Model):
     #image = ndb.BlobKeyProperty
     date = ndb.DateTimeProperty(auto_now_add=True)
 
+class Images2(ndb.Model):
+    item_id = ndb.IntegerProperty()
+    image_key = ndb.BlobKeyProperty()
+    servingUrl = ndb.StringProperty()
+    description = ndb.StringProperty()
+    date = ndb.DateTimeProperty(auto_now_add=True)
+
+class Submit(blobstore_handlers.BlobstoreUploadHandler, webapp2.RequestHandler):
+    def post(self):
+        parent = ndb.Key('Persons', users.get_current_user().email())
+        person = parent.get()
+
+        if person == None:
+            person = Persons(id=users.get_current_user().email())
+            person.next_item = 1
+        image = Images2(parent=parent, id = str(person.next_item))
+        image.item_id = person.next_item
+
+        uploadfile = self.get_uploads('filebutton')
+        image.image_key = uploadfile[0].key()
+        image.description = self.request.get("test2")
+        image.servingUrl = images.get_serving_url(image.image_key)
+
+        if image.image_key != '':
+            person.next_item +=1
+            person.put()
+            image.put()
+        self.redirect(app_domain + "upload")
 
 class Upload(webapp2.RequestHandler):
     def post(self):
@@ -126,12 +134,25 @@ class Upload(webapp2.RequestHandler):
                             "WHERE ANCESTOR IS :1 "
                             "ORDER BY date DESC",
                             parent_key)
+            upload_url = blobstore.create_upload_url('/submit')
+            query2 = ndb.gql("SELECT * "
+                             "FROM Images2 "
+                             "WHERE ANCESTOR IS :1 "
+                             "ORDER BY date DESC",
+                             parent_key)
+            #for pic in query2:
+             #   pic.servingUrl = images.get_serving_url(pic.image_key)
+
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
                 'items' : query,
                 'items_num' : query.count(),
+                'upload_url' : upload_url,
+                'pic' : query2,
+                'pic_num' : query2.count()
+
             }
 
             template = jinja_environment.get_template("upload.html")
@@ -182,6 +203,7 @@ app = webapp2.WSGIApplication([
                                   ('/deleteitem', DeleteItem),
                                   #('/welcome', Welcome),
                                   ('/upload', Upload),
+                                  ('/submit', Submit),
                                   ('/profile', Profile),
                                   ('/getOpenId', GetOpenId),
 

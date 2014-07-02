@@ -125,7 +125,7 @@
                 <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+                <form class="form-horizontal well" enctype="multipart/form-data" method="post" action="{{upload_url}}" id="modal-form">
 
 
                     <!-- File Button -->
@@ -134,6 +134,11 @@
                             <input id="filebutton" name="filebutton" class="input-file" type="file" >
                         </div>
                     </div>
+                        <label>Title</label>
+                        <textarea id='test2' name="test2"></textarea>
+                        <br><span id='count2'></span> characters remaining remaining
+                        <br><hr>
+                        <br/>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Upload</button>
@@ -200,7 +205,7 @@
         </div>
     </div>
         {% endfor %}
-    {% else %}
+    {% elif items_num == 0 and pic_num == 0 %}
         <div class="container theme-showcase" style="padding-top:300px;" role="main">
             <div class="jumbotron">
                 <h1><font><font>No pitures :(</font></font></h1>
@@ -208,6 +213,59 @@
             </div>
         </div>
     {% endif %}
+
+    {% if pic_num > 0 %}
+
+        {% for pics in pic %}
+
+        <div class="posts" style="width:600px;">
+            <div class="page-header">
+                <h1>{{ pics.description }}</h1>
+            </div>
+            <img class="img-thumbnail"  style="max-width:100%;width: auto\9; height: auto;" src="{{ pics.servingUrl }}">
+            <div class="row" style="width:550px;padding-top:15px;">
+                <div style="float:left;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ pics.servingUrl }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
+                <div class="col-xs-3 pull-right"><button class="btn btn-block btn-lg btn-danger" data-toggle="modal" data-target = "#{{pics.item_id}}">Delete</button></div>
+            </div>
+        </div>
+
+
+
+    <div class="modal fade" id="{{pics.item_id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Delete</h4>
+
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal well" method="post" action="/deleteitem" id="modal-form">
+
+
+                        <!-- File Button -->
+                        <div class="modal-body">
+                            <div class="col-md-4" >
+                                Are you sure?
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <input type="hidden" name="itemid" value="{{ pics.item_id }}">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                            <button type="submit" class="btn btn-primary" value="Delete">Yes</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    {% endif %}
+
 </div>
 
 
@@ -216,10 +274,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./html/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/jquery.min.js"></script>
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
     <![endif]-->
+<script type="text/javascript" src="../bootstrap/js/jquery.NobleCount.js"></script>
+    <script type="text/javascript">
+            $(document).ready(function () {
+                	$('#test1').NobleCount('#count1',{
+                	block_negative: true
+                	});
+                	$('#test2').NobleCount('#count2',{
+                	block_negative: true
+                	});
+            });
+
+
+    </script>
 </body>
 </html>
