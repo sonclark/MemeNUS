@@ -168,6 +168,13 @@ class DeleteItem(webapp2.RequestHandler):
         item.delete()
         self.redirect('/upload')
 
+class DeleteItem_images(webapp2.RequestHandler):
+    # Delete item specified by user
+
+    def post(self):
+        item = ndb.Key('Persons', users.get_current_user().email(), 'Images2', self.request.get('itemid'))
+        item.delete()
+        self.redirect('/upload')
 
 class GetOpenId(webapp2.RequestHandler):
     def post(self):
@@ -201,6 +208,7 @@ class Profile(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
                                   ('/', MainPage),
                                   ('/deleteitem', DeleteItem),
+                                  ('/deleteitem_images', DeleteItem_images),
                                   #('/welcome', Welcome),
                                   ('/upload', Upload),
                                   ('/submit', Submit),
