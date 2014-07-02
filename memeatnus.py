@@ -39,6 +39,7 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         #if login already
+        upload_url = blobstore.create_upload_url('/submit')
         if user:
             query = ndb.gql("SELECT * "
                             "FROM Images "
@@ -54,6 +55,7 @@ class MainPage(webapp2.RequestHandler):
                 'logout' : users.create_logout_url(self.request.host_url),
                 'items' : query,
                 'items2' : query2,
+                'upload_url' :upload_url,
             }
 
             template = jinja_environment.get_template('home.html')
@@ -101,6 +103,8 @@ class Submit(blobstore_handlers.BlobstoreUploadHandler, webapp2.RequestHandler):
             person.put()
             image.put()
         self.redirect(app_domain + "upload")
+    def get(self):
+        self.redirect(app_domain)
 
 class Upload(webapp2.RequestHandler):
     def post(self):
