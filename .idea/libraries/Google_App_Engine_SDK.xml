@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Google App Engine SDK">
+  <library name="Google App Engine SDK" type="python">
     <CLASSES>
       <root url="file://C:/Program Files (x86)/Google/google_appengine" />
       <root url="file://C:/Program Files (x86)/Google/google_appengine/lib/antlr3" />

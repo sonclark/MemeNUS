@@ -202,13 +202,19 @@ class Profile(webapp2.RequestHandler):
                             "WHERE ANCESTOR IS :1 "
                             "ORDER BY date DESC",
                             parent_key)
+            query2 = ndb.gql("SELECT * "
+                            "FROM Images2 "
+                            "WHERE ANCESTOR IS :1 "
+                            "ORDER BY date DESC",
+                            parent_key)
+
 
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
-                'items' : query.count()
-
+                'items' : query.count(),
+                'items2' : query2.count(),
             }
             template = jinja_environment.get_template("profile.html")
             self.response.out.write(template.render(template_values))
