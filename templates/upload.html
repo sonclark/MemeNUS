@@ -173,11 +173,16 @@
                 <div class="page-header">
                     <h1>{{ item.description }}</h1>
                 </div>
+                <button type="button" class="close" data-toggle="modal" data-target ="#{{item.item_id}}" aria-hidden="true"><span style="color: red" class ="glyphicon glyphicon-minus-sign"></span></button>
+
                 <img class="img-thumbnail"  style="max-width:100%;width: auto\9; height: auto;" src="{{ item.image_link }}">
                 <div class="row" style="width:550px;padding-top:15px;">
-                    <div style="float:left;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
-                    <div class="col-xs-3 pull-right"><button class="btn btn-block btn-lg btn-danger" data-toggle="modal" data-target = "#{{item.item_id}}">Delete</button></div>
-                </div>
+                    <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon  glyphicon-thumbs-down"></span></button></div>
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+
+                    <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
+                    </div>
             </div>
 
 
