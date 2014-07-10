@@ -176,52 +176,54 @@
             <!-- Time might use moment.js we shall see
             <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
             <div class="row" style="width:550px;padding-top:15px;">
-                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon  glyphicon-thumbs-down"></span></button></div>
+                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+
                 <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
             </div>
 
 		</div>
     {% endfor %}
 
-{% for item in items2 %}
-		<div class="posts" style="width:600px;">
-			<div class="page-header">
-				<h1>{{ item.description }}</h1>
-			</div>
-			<img class="img-thumbnail"  style="max-width: 100%; width: auto\9; height: auto;" src="{{ item.servingUrl }}" >
-
-            <!-- Time might use moment.js we shall see
-            <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
-            <div class = "row" style="width:550px;padding-top:15px;">
-
-                <div class="col-xs-3" style="width:15%;"><a><button  class="btn btn-block btn-lg " style="width:60px; background-color:#2f4154;" ><span class="glyphicon glyphicon-thumbs-up"></span></button></a>
-                </div>
-                <div class="col-xs-3" style="width:15%;"><a><button  class="btn btn-block btn-lg " style="width:60px; background-color:#2f4154"><span class="glyphicon  glyphicon-thumbs-down "></span></button></a>
-                </div>
-                <div class="col-xs-3" style="width:15%;"><a><button  class="btn btn-block btn-lg " style="width:60px; background-color:#2f4154"><span class="glyphicon glyphicon-comment"></span></button></a>
-                </div>
-
-
-                <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.servingUrl }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a>
-                </div>
-            </div>
-
-
-           <!-- <div class="row" style="width:550px;padding-top:15px;">
-                <ul>
-                    <li>    <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>
-                    </li>
-                    <li><div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>
-                    </li>
-                    <li><div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon-comment"></span></button></div>
-                    </li>
-                </ul>
-                <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.servingUrl }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
-            </div>-->
-
-		</div>
-    {% endfor %}
+{#{% for item in items2 %}#}
+{#		<div class="posts" style="width:600px;">#}
+{#			<div class="page-header">#}
+{#				<h1>{{ item.description }}</h1>#}
+{#			</div>#}
+{#			<img class="img-thumbnail"  style="max-width: 100%; width: auto\9; height: auto;" src="{{ item.servingUrl }}" >#}
+{##}
+{#            <!-- Time might use moment.js we shall see#}
+{#            <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->#}
+{#            <div class = "row" style="width:550px;padding-top:15px;">#}
+{##}
+{#                <div class="col-xs-3" style="width:15%;"><a><button  class="btn btn-block btn-lg " style="width:60px; background-color:#2f4154;" ><span class="glyphicon glyphicon-thumbs-up"></span></button></a>#}
+{#                </div>#}
+{#                <div class="col-xs-3" style="width:15%;"><a><button  class="btn btn-block btn-lg " style="width:60px; background-color:#2f4154"><span class="glyphicon  glyphicon-thumbs-down "></span></button></a>#}
+{#                </div>#}
+{#                <div class="col-xs-3" style="width:15%;"><a><button  class="btn btn-block btn-lg " style="width:60px; background-color:#2f4154"><span class="glyphicon glyphicon-comment"></span></button></a>#}
+{#                </div>#}
+{##}
+{##}
+{#                <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.servingUrl }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{##}
+{#           <!-- <div class="row" style="width:550px;padding-top:15px;">#}
+{#                <ul>#}
+{#                    <li>    <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="fui-check"></span></button></div>#}
+{#                    </li>#}
+{#                    <li><div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="fui-cross"></span></button></div>#}
+{#                    </li>#}
+{#                    <li><div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon-comment"></span></button></div>#}
+{#                    </li>#}
+{#                </ul>#}
+{#                <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.servingUrl }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>#}
+{#            </div>-->#}
+{##}
+{#		</div>#}
+{#    {% endfor %}#}
 
 
 

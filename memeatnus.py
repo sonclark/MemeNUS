@@ -45,16 +45,12 @@ class MainPage(webapp2.RequestHandler):
                             "FROM Images "
                             "ORDER BY date DESC "
                             )
-            query2 = ndb.gql("SELECT * "
-                             "FROM Images2 "
-                             "ORDER BY date DESC")
 
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
                 'items' : query,
-                'items2' : query2,
                 'upload_url' :upload_url,
             }
 
@@ -72,14 +68,7 @@ class Images(ndb.Model):
     item_id = ndb.IntegerProperty()
     image_link =  ndb.StringProperty()
     description = ndb.TextProperty()
-    #image = ndb.BlobKeyProperty
-    date = ndb.DateTimeProperty(auto_now_add=True)
-
-class Images2(ndb.Model):
-    item_id = ndb.IntegerProperty()
     image_key = ndb.BlobKeyProperty()
-    servingUrl = ndb.StringProperty()
-    description = ndb.StringProperty()
     date = ndb.DateTimeProperty(auto_now_add=True)
 
 class Submit(blobstore_handlers.BlobstoreUploadHandler, webapp2.RequestHandler):
@@ -90,13 +79,13 @@ class Submit(blobstore_handlers.BlobstoreUploadHandler, webapp2.RequestHandler):
         if person == None:
             person = Persons(id=users.get_current_user().email())
             person.next_item = 1
-        image = Images2(parent=parent, id = str(person.next_item))
+        image = Images(parent=parent, id = str(person.next_item))
         image.item_id = person.next_item
 
         uploadfile = self.get_uploads('filebutton')
         image.image_key = uploadfile[0].key()
         image.description = self.request.get("test2")
-        image.servingUrl = images.get_serving_url(image.image_key)
+        image.image_link = images.get_serving_url(image.image_key)
 
         if image.image_key != '':
             person.next_item +=1
@@ -144,13 +133,7 @@ class Upload(webapp2.RequestHandler):
                             "ORDER BY date DESC",
                             parent_key)
             upload_url = blobstore.create_upload_url('/submit')
-            query2 = ndb.gql("SELECT * "
-                             "FROM Images2 "
-                             "WHERE ANCESTOR IS :1 "
-                             "ORDER BY date DESC",
-                             parent_key)
-            #for pic in query2:
-             #   pic.servingUrl = images.get_serving_url(pic.image_key)
+
 
             template_values = {
                 'user_mail' : users.get_current_user().email(),
@@ -159,8 +142,6 @@ class Upload(webapp2.RequestHandler):
                 'items' : query,
                 'items_num' : query.count(),
                 'upload_url' : upload_url,
-                'pic' : query2,
-                'pic_num' : query2.count()
 
             }
 
@@ -181,7 +162,7 @@ class DeleteItem_images(webapp2.RequestHandler):
     # Delete item specified by user
 
     def post(self):
-        item = ndb.Key('Persons', users.get_current_user().email(), 'Images2', self.request.get('itemid'))
+        item = ndb.Key('Persons', users.get_current_user().email(), 'Images', self.request.get('itemid'))
         item.delete()
         blobstore.delete(self.request.get('blobkey'))
         self.redirect('/upload')
@@ -202,19 +183,13 @@ class Profile(webapp2.RequestHandler):
                             "WHERE ANCESTOR IS :1 "
                             "ORDER BY date DESC",
                             parent_key)
-            query2 = ndb.gql("SELECT * "
-                            "FROM Images2 "
-                            "WHERE ANCESTOR IS :1 "
-                            "ORDER BY date DESC",
-                            parent_key)
-
 
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
                 'items' : query.count(),
-                'items2' : query2.count(),
+
             }
             template = jinja_environment.get_template("profile.html")
             self.response.out.write(template.render(template_values))
