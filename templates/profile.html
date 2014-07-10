@@ -116,18 +116,21 @@
                 <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
 
                     <div class="modal-body">
-                        <div class="col-md-10" >
-                            <input id="textinput" name="textinput" type="text" placeholder="Http://" class="form-control input-md">
+                        <div style="clear:both;float:left;width:500px;">
+                            <input id="textinput" name="textinput" type="text" placeholder="http://" class="form-control input-md">
 
-                        </div>
+						</div>
 
-                            <label>Title</label>
-                            <textarea id='test1' name="test1"></textarea>
-                            <br><span id='count1'></span> characters remaining remaining
-                            <br><hr>
-
-
-                        <br/>
+                        <div style="clear:both;float:left;"> <label>Title</label> </div>
+                        <div style="clear:both;float:left;"> <textarea id="test1" name="test1" style="width:500px;height:100px;max-width:500px;max-height:100px;"></textarea></div>
+                        <br>
+						<div style="clear:both;float:left;"><span id="count1"></span> characters remaining remaining</div>
+						<br>
+                        <br>
+						<br>
+						<br>
+						<br>
+						<br>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -150,20 +153,32 @@
                 <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+                <form class="form-horizontal well" enctype="multipart/form-data" method="post" action="{{upload_url}}" id="modal-form">
 
 
                     <!-- File Button -->
                     <div class="modal-body">
-                        <div class="col-md-4" >
+                        <div style="clear:both;float:left;" >
                             <input id="filebutton" name="filebutton" class="input-file" type="file" >
                         </div>
-                    </div>
+
+
+
+					<div style="clear:both;float:left;"> <label>Title</label> </div>
+                    <div style="clear:both;float:left;"><textarea id='test2' name="test2" style="width:500px;height:100px;max-width:500px;max-height:100px;"></textarea></div>
+                    <br>
+					<div style="clear:both;float:left;"><span id='count2'></span> characters remaining remaining </div>
+                    <br>
+                    <br>
+					<br>
+					<br>
+					<br>
+					<br>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Upload</button>
                     </div>
-
+					</div>
                 </form>
 
             </div>
