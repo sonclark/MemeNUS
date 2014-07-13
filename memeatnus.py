@@ -62,6 +62,11 @@ class MainPage(webapp2.RequestHandler):
 
 class Persons(ndb.Model):
     next_item = ndb.IntegerProperty()
+    next_like = ndb.IntegerProperty()
+
+class Liked_photos(ndb.Model):
+    photos_id = ndb.IntegerProperty()
+
 
 class Images(ndb.Model):
     #Models an item with item_link, image_link, description, and date. Key is item_id.
@@ -70,6 +75,45 @@ class Images(ndb.Model):
     description = ndb.TextProperty()
     image_key = ndb.BlobKeyProperty()
     date = ndb.DateTimeProperty(auto_now_add=True)
+    likes = ndb.IntegerProperty()
+    dislikes = ndb.IntegerProperty()
+    #store the ownername + image_link
+    OwnerString = ndb.StringProperty()
+
+
+class Submit_likes(webapp2.RequestHandler):
+    def post(self):
+        parent = ndb.Key('Persons', users.get_current_user().email())
+        person = parent.get()
+
+        if person == None:
+            person = Persons(id=users.get_current_user().email())
+            person.next_item = 1
+            person.next_like = 1
+
+        like = self.request.get('like')
+        dislike = self.request.get('dislike')
+
+        if like:
+            query = ndb.gql("SELECT * "
+                            "FROM Images "
+                            "WHERE OwnerString = :1",like
+            )
+            for item in query:
+                item.likes +=1
+                item.put()
+
+        if dislike:
+            query = ndb.gql("SELECT * "
+                            "FROM Images "
+                            "WHERE OwnerString = :1",dislike)
+            for item in query:
+                item.dislikes +=1
+                item.put()
+
+        self.redirect(app_domain)
+    def get(self):
+        self.redirect(app_domain)
 
 class Submit(blobstore_handlers.BlobstoreUploadHandler, webapp2.RequestHandler):
     def post(self):
@@ -79,13 +123,17 @@ class Submit(blobstore_handlers.BlobstoreUploadHandler, webapp2.RequestHandler):
         if person == None:
             person = Persons(id=users.get_current_user().email())
             person.next_item = 1
+            person.next_like = 1
         image = Images(parent=parent, id = str(person.next_item))
         image.item_id = person.next_item
+        image.likes = 0
+        image.dislikes = 0
 
         uploadfile = self.get_uploads('filebutton')
         image.image_key = uploadfile[0].key()
         image.description = self.request.get("test2")
         image.image_link = images.get_serving_url(image.image_key)
+        image.OwnerString = str(image.image_link)+"/"+users.get_current_user().email().split("@")[0]
 
         if image.image_key != '':
             person.next_item +=1
@@ -105,12 +153,15 @@ class Upload(webapp2.RequestHandler):
         if person == None:
             person = Persons(id=users.get_current_user().email())
             person.next_item = 1
-
+            person.next_like = 1
         image = Images(parent=parent, id = str(person.next_item))
         image.item_id = person.next_item
+        image.likes = 0
+        image.dislikes = 0
 
         image.image_link = self.request.get("textinput")
         image.description = self.request.get("test1")
+        image.OwnerString = str(image.image_link)+"/"+users.get_current_user().email().split("@")[0]
 
         if image.image_link.rstrip() != '' :
             person.next_item +=1
@@ -202,6 +253,7 @@ app = webapp2.WSGIApplication([
                                   ('/deleteitem', DeleteItem),
                                   ('/deleteitem_images', DeleteItem_images),
                                   #('/welcome', Welcome),
+                                  ('/submit_likes',Submit_likes),
                                   ('/upload', Upload),
                                   ('/submit', Submit),
                                   ('/profile', Profile),

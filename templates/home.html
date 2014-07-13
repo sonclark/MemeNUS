@@ -176,10 +176,15 @@
             <!-- Time might use moment.js we shall see
             <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
             <div class="row" style="width:550px;padding-top:15px;">
-                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
-                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon  glyphicon-thumbs-down"></span></button></div>
+                <form method="post" action="/submit_likes">
+                <div class="col-xs-3" style="width:15%;"><button type="submit" name="like" id="like" value="{{ item.OwnerString }}" style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                <small>({{ item.likes }})</small>
+                </div>
+                <div class="col-xs-3" style="width:15%;"><button type="submit" name="dislike" id="dislike" value="{{ item.OwnerString }}"style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon  glyphicon-thumbs-down"></span></button>
+                <small>({{ item.dislikes }})</small>
+                </div>
+                </form>
                 <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
-
                 <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
             </div>
 
