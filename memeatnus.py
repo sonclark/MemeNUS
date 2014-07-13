@@ -183,12 +183,13 @@ class Profile(webapp2.RequestHandler):
                             "WHERE ANCESTOR IS :1 "
                             "ORDER BY date DESC",
                             parent_key)
-
+            upload_url = blobstore.create_upload_url('/submit')
             template_values = {
                 'user_mail' : users.get_current_user().email(),
                 'user_name' : users.get_current_user().email().split("@")[0],
                 'logout' : users.create_logout_url(self.request.host_url),
                 'items' : query.count(),
+                'upload_url' : upload_url,
 
             }
             template = jinja_environment.get_template("profile.html")
