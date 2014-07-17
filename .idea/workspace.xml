@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a568df4-9b0b-456f-8eb2-0a6bbb90c535" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memeatnus.py" afterPath="$PROJECT_DIR$/memeatnus.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,7 +29,7 @@
       <file leaf-file-name="app.yaml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="800">
+            <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="800">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -41,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/index.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -50,7 +49,7 @@
       <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="31.034483" vertical-offset="2820" max-vertical-offset="4400">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2820" max-vertical-offset="4400">
               <caret line="96" column="38" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
               <folding />
             </state>
@@ -60,7 +59,7 @@
       <file leaf-file-name="upload.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/upload.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.689655" vertical-offset="3602" max-vertical-offset="6480">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3602" max-vertical-offset="6480">
               <caret line="213" column="93" selection-start-line="213" selection-start-column="93" selection-end-line="213" selection-end-column="93" />
               <folding />
             </state>
@@ -70,16 +69,20 @@
       <file leaf-file-name="memeatnus.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memeatnus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.614525" vertical-offset="4180" max-vertical-offset="5100">
-              <caret line="106" column="37" selection-start-line="106" selection-start-column="37" selection-end-line="106" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.46815643" vertical-offset="481" max-vertical-offset="5440">
+              <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
               <folding>
-                <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-                <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-                <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-                <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-                <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-                <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-                <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+                <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+                <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+                <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+                <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+                <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+                <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+                <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+                <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+                <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+                <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+                <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
               </folding>
             </state>
           </provider>
@@ -88,19 +91,9 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.793103" vertical-offset="3222" max-vertical-offset="5380">
+            <state vertical-scroll-proportion="-19.931034" vertical-offset="3102" max-vertical-offset="5380">
               <caret line="184" column="22" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -173,6 +166,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,7 +191,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -536,14 +529,17 @@
       <created>1405246711885</created>
       <updated>1405246711885</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added like and dislike function for home.html (half implemented)">
+      <created>1405252578865</created>
+      <updated>1405252578865</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -559,6 +555,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853982" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -597,7 +594,8 @@
     <MESSAGE value="Updated upload css." />
     <MESSAGE value="Updated to use only 1 DB, edited some css." />
     <MESSAGE value="Minor adjustment to upload.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor adjustment to upload.html" />
+    <MESSAGE value="Added like and dislike function for home.html (half implemented)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added like and dislike function for home.html (half implemented)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -617,17 +615,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2937" max-vertical-offset="5280">
           <caret line="181" column="0" selection-start-line="178" selection-start-column="16" selection-end-line="181" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -643,13 +631,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
@@ -666,17 +658,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -692,13 +674,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
@@ -714,17 +700,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -740,13 +716,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
@@ -755,17 +735,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -781,13 +751,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
@@ -796,17 +770,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -815,13 +779,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
@@ -852,13 +820,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
@@ -889,13 +861,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
@@ -919,13 +895,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
@@ -1018,7 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="907">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-89.03571" vertical-offset="49127" max-vertical-offset="116740">
           <caret line="2581" column="1" selection-start-line="2581" selection-start-column="1" selection-end-line="2581" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,7 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="21460">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +1039,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="31.034483" vertical-offset="2820" max-vertical-offset="4400">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2820" max-vertical-offset="4400">
           <caret line="96" column="38" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
           <folding />
         </state>
@@ -1070,7 +1047,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/upload.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.689655" vertical-offset="3602" max-vertical-offset="6480">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3602" max-vertical-offset="6480">
           <caret line="213" column="93" selection-start-line="213" selection-start-column="93" selection-end-line="213" selection-end-column="93" />
           <folding />
         </state>
@@ -1079,41 +1056,35 @@
     <entry file="file://$PROJECT_DIR$/index.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.793103" vertical-offset="3222" max-vertical-offset="5380">
+        <state vertical-scroll-proportion="-19.931034" vertical-offset="3102" max-vertical-offset="5380">
           <caret line="184" column="22" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/memeatnus.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.614525" vertical-offset="4180" max-vertical-offset="5100">
-          <caret line="106" column="37" selection-start-line="106" selection-start-column="37" selection-end-line="106" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.46815643" vertical-offset="481" max-vertical-offset="5440">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
           <folding>
-            <marker date="1405252030852" expanded="true" signature="1390:1491" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3361" placeholder="SELECT likes..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3237:3342" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3608" placeholder="SELECT disli..Images..." />
-            <marker date="1405252030852" expanded="true" signature="3502:3607" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="6018:6171" placeholder="SELECT * FRO..Images..." />
-            <marker date="1405252030852" expanded="true" signature="7874:8027" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1391:1492" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1612" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="1555:1665" placeholder="SELECT *from..Liked_photos..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3608" placeholder="SELECT likes..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="3484:3589" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4109" placeholder="SELECT disli..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="4003:4108" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="6779:6932" placeholder="SELECT * FRO..Images..." />
+            <marker date="1405611577256" expanded="true" signature="8635:8788" placeholder="SELECT * FRO..Images..." />
           </folding>
         </state>
       </provider>
