@@ -42,13 +42,15 @@ class MainPage(webapp2.RequestHandler):
         upload_url = blobstore.create_upload_url('/submit')
 
         if user:
+            parent_key = ndb.Key('Persons', users.get_current_user().email())
             query = ndb.gql("SELECT * "
                             "FROM Images "
                             "ORDER BY date DESC "
                             )
             query2 = ndb.gql("SELECT *"
                              "from Liked_photos "
-                             "WHERE ANCESTOR IS :1 "
+                             "WHERE ANCESTOR IS :1 ",
+                             parent_key
             )
 
             template_values = {
@@ -93,6 +95,12 @@ class Submit_likes(webapp2.RequestHandler):
         parent = ndb.Key('Persons', users.get_current_user().email())
         person = parent.get()
 
+        liked = ndb.gql("SELECT *"
+                        "from Liked_photos "
+                        "WHERE ANCESTOR IS :1 ",
+                        parent
+        )
+
         if person == None:
             person = Persons(id=users.get_current_user().email())
             person.next_item = 1
@@ -106,27 +114,48 @@ class Submit_likes(webapp2.RequestHandler):
                             "FROM Images "
                             "WHERE OwnerString = :1",like
             )
-            like_photos = Liked_photos(parent=parent, id = str(person.next_like))
-            like_photos.photos_id = like
-            like_photos.like_status = "like"
-            person.next_like+=1
+
+            if liked == None:
+                like_photos = Liked_photos(parent=parent, id = str(person.next_like))
+                like_photos.photos_id = like
+                like_photos.like_status = "like"
+                like_photos.put()
+                person.next_like+=1
+            else:
+                query_liked = ndb.gql("SELECT * "
+                                "FROM Liked_photos "
+                                "WHERE photos_id = :1", like)
+                for item in query_liked:
+                    item.like_status = "like"
+                    item.put()
             for item in query:
                 item.likes +=1
                 item.put()
-            like_photos.put()
+
             person.put()
         if dislike:
             query = ndb.gql("SELECT * "
                             "FROM Images "
                             "WHERE OwnerString = :1",dislike)
-            like_photos = Liked_photos(parent=parent, id = str(person.next_like))
-            like_photos.photos_id = dislike
-            like_photos.like_status = "dislike"
-            person.next_like+=1
+
+            if liked == None:
+                like_photos = Liked_photos(parent=parent, id = str(person.next_like))
+                like_photos.photos_id = dislike
+                like_photos.like_status = "dislike"
+                person.next_like+=1
+                like_photos.put()
+            else:
+                query_liked = ndb.gql("SELECT * "
+                                "FROM Liked_photos "
+                                "WHERE photos_id = :1", dislike)
+                for item in query_liked:
+                    item.like_status = "dislike"
+                    item.put()
+
             for item in query:
-                item.dislikes +=1
+                item.likes -=1
                 item.put()
-            like_photos.put()
+
             person.put()
         self.redirect(app_domain)
     def get(self):
