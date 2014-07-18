@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <title>Meme@NUS</title>
+
+    <!-- Bootstrap -->
+    <link href="./html/css/bootstrap.css" rel="stylesheet">
+    <link href="./html/css/flat-ui.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <script type="text/javascript">
+        // Popup window code
+        function newPopup(url) {
+	        popupWindow = window.open(
+		        url,'popUpWindow','height=350,width=500,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+        }
+    </script>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only"><font><font>Toggle navigation</font></font></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><font><font>Meme@NUS</font></font></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/"><font><font>Home</font></font></a></li>
+                <!--Implement upload page -->
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Upload </font></font><b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href = "#" data-toggle="modal" data-target="#myModal_url"><font><font>Add from url</font></font></a></li>
+        <li><a href = "#" data-toggle="modal" data-target="#myModal_images"><font><font>Upload Image</font></font></a></li>
+        <li><a href="http://memeful.com/?ref=9gag"><font><font>Make a meme</font></font></a></li>
+
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Links </font></font><b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href="Http://ivle.nus.edu.sg"><font><font>IVLE</font></font></a></li>
+        <li><a href="Http://myisis.nus.edu.sg"><font><font>MYISIS</font></font></a></li>
+        <li><a href="Http://nusmods.com"><font><font>NUSMODS</font></font></a></li>
+        <li><a href="http://nus-bell-curve-god.appspot.com/"><font><font>PRAY?</font></font></a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header"><font><font>Popular Memes</font></font></li>
+        <li><a href="#"><font><font>Featured MEME</font></font></a></li>
+        <li><a href="#"><font><font>Top Rated MEME</font></font></a></li>
+    </ul>
+</li>
+
+</ul>
+<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-user"></span>{{ user_name }} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">{{ user_mail }}</li>
+            <li class="divider"></li>
+            <li><a href="/profile">Edit profile</a></li>
+            <li><a href="/upload">Uploaded Images</a></li>
+            <li><a href={{ logout }}>Log out</a></li>
+        </ul>
+    </li>
+</ul>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+
+
+<div class="modal fade" id="myModal_url" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Upload Image through URL</h4>
+                <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
+
+                    <div class="modal-body">
+                        <div style="clear:both;float:left;width:500px;">
+                            <input id="textinput" name="textinput" type="text" placeholder="http://" class="form-control input-md">
+
+						</div>
+
+                        <div style="clear:both;float:left;"> <label>Title</label> </div>
+                        <div style="clear:both;float:left;"> <textarea id="test1" name="test1" style="width:500px;height:100px;max-width:500px;max-height:100px;"></textarea></div>
+                        <br>
+						<div style="clear:both;float:left;"><span id="count1"></span> characters remaining remaining</div>
+						<br>
+                        <br>
+						<br>
+						<br>
+						<br>
+						<br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal_images" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Upload Image</h4>
+                <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal well" enctype="multipart/form-data" method="post" action="{{upload_url}}" id="modal-form">
+
+
+                    <!-- File Button -->
+                    <div class="modal-body">
+                        <div style="clear:both;float:left;" >
+                            <input id="filebutton" name="filebutton" class="input-file" type="file" >
+                        </div>
+
+					
+
+					<div style="clear:both;float:left;"> <label>Title</label> </div>
+                    <div style="clear:both;float:left;"><textarea id='test2' name="test2" style="width:500px;height:100px;max-width:500px;max-height:100px;"></textarea></div>
+                    <br>
+					<div style="clear:both;float:left;"><span id='count2'></span> characters remaining remaining </div>
+                    <br>
+                    <br>
+					<br>
+					<br>
+					<br>
+					<br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+					</div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="padding-top:120px;" align="center">
+
+ <div class="row">
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Good Guy</h2>
+			  <img src="http://lolfunnymeme.com/wp-content/uploads/goodguygreg.jpg" style="max-height:300px;max-width:200px;">
+              <p>Good Guy Greg is a meme featuring a photo of a square-jawed man smiling at the camera with a marijuana cigarette in his mouth. The captions generally depict the character as kind, generous or empathetic to other people.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Asian Father</h2>
+			  <img src="https://pbs.twimg.com/profile_images/2121033612/high-expectations-asian-father-template.jpg" style="max-height:300px;max-width:200px;">
+              <p>High Expectations Asian Father is a meme based on stereotypes and cliches about first-generation Asian parents pushing their children to excel in academic fields in an overbearing manner </p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Bad Luck Brian</h2>
+			  <img src="http://www.recaption.com/memes/users/Bad-Luck-Brian.jpg" style="max-height:250px;max-width:170px;">
+              <p>Bad Luck Brian is a meme featuring a photo of a blonde teenage boy wearing a plaid sweater vest and braces, accompanied by captions that describe a variety of embarrassing and tragic occurrences.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+			<div class="col-6 col-sm-6 col-lg-4">
+              <h2>Awkward Seal</h2>
+			  <img src="http://hotmeme.net/media/mememaker/c/9/10331-awkward-seal.jpg" style="max-height:300px;max-width:290px;">
+              <p>Awkward Moment Seal is a meme featuring a seal with a wide-eyed expression and captions describing socially awkward or uncomfortable situations in similar vein to “That Awkward Moment…” </p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+			<div class="col-6 col-sm-6 col-lg-4">
+              <h2>Not Sure If</h2>
+			  <img src="http://img.pandawhale.com/45496-not-sure-template-lsiE.png" style="max-height:300px;max-width:260px;">
+              <p>Not Sure If uses a still of Fry squinting his eyes from the TV show Futurama. The top line reads “Not sure if X”, with “or just Y” as the bottom line, and is used to represent an internal monologue. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+			<div class="col-6 col-sm-6 col-lg-4">
+              <h2>College Liberal</h2>
+			  <img src="http://cdn.memegenerator.net/images/300x/2280908.jpg" style="max-height:300px;max-width:200px;">
+              <p>College Liberal (also known as “Bad Argument Hippie”) typically portray the character as a naive and hypocritical left-wing political activist, referencing various clichés associated with the “hippie” subculture.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+			<div class="col-6 col-sm-6 col-lg-4">
+              <h2>Freshman</h2>
+			  <img src="http://www.recaption.com/memes/College-Freshman.jpg" style="max-height:300px;max-width:260px;">
+              <p>College Freshman usually highlight the all-too-familiar cliches found in campus social scenes and student life during college years. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+			<div class="col-6 col-sm-6 col-lg-4">
+              <h2>Lazy Senior</h2>
+			  <img src="http://www.memecreator.com/static/images/templates/7334.jpg" style="max-height:300px;max-width:240px;">
+              <p>Lazy College Senior typically captioned with unmotivated statements or behaviors that are associated with burnt out college students during their final year of school, a phenomenon commonly known as “senioritis.” </p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+			<div class="col-6 col-sm-6 col-lg-4">
+              <h2>Bad Teacher</h2>
+			  <img src="http://memeorama.com/wp-content/uploads/2012/01/Terrible-Teacher.jpg" style="max-height:300px;max-width:200px;">
+              <p>Bad Teacher describes lazy or irresponsible teaching methods, as well as cliche expressions and retorts frequently used by teachers in interacting with students. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div><!--/span-->
+          </div>
+ 
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./html/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="../bootstrap/js/jquery.NobleCount.js"></script>
+<script type="text/javascript">
+            $(document).ready(function () {
+                	$('#test1').NobleCount('#count1',{
+                	block_negative: true
+                	});
+                    $('#test2').NobleCount('#count2',{
+                	block_negative: true
+                	});
+            });
+
+
+    </script>
+
+</body>
+</html>
