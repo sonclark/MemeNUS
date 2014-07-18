@@ -60,6 +60,7 @@ class MainPage(webapp2.RequestHandler):
                 'items' : query,
                 'upload_url' :upload_url,
                 'liked_photos' : query2,
+                'liked_photos_count' : query2.count(),
 
             }
 
@@ -92,30 +93,36 @@ class Images(ndb.Model):
 
 class Submit_likes(webapp2.RequestHandler):
     def post(self):
+        like = str(self.request.get('like'))
+        dislike =str (self.request.get('dislike'))
+
         parent = ndb.Key('Persons', users.get_current_user().email())
         person = parent.get()
 
-        liked = ndb.gql("SELECT *"
-                        "from Liked_photos "
-                        "WHERE ANCESTOR IS :1 ",
-                        parent
-        )
+
 
         if person == None:
             person = Persons(id=users.get_current_user().email())
             person.next_item = 1
             person.next_like = 1
 
-        like = str(self.request.get('like'))
-        dislike =str (self.request.get('dislike'))
+
 
         if like:
+
+            liked = ndb.gql("SELECT *"
+                            "from Liked_photos "
+                            "WHERE ANCESTOR IS :1 "
+                            "AND photos_id = :2 ",
+                            parent, like
+            )
+
             query = ndb.gql("SELECT * "
                             "FROM Images "
                             "WHERE OwnerString = :1",like
             )
 
-            if liked == None:
+            if liked.count() == 0:
                 like_photos = Liked_photos(parent=parent, id = str(person.next_like))
                 like_photos.photos_id = like
                 like_photos.like_status = "like"
@@ -134,11 +141,17 @@ class Submit_likes(webapp2.RequestHandler):
 
             person.put()
         if dislike:
+            liked = ndb.gql("SELECT *"
+                            "from Liked_photos "
+                            "WHERE ANCESTOR IS :1 "
+                            "AND photos_id = :2 ",
+                            parent, dislike
+            )
             query = ndb.gql("SELECT * "
                             "FROM Images "
                             "WHERE OwnerString = :1",dislike)
 
-            if liked == None:
+            if liked.count() == 0:
                 like_photos = Liked_photos(parent=parent, id = str(person.next_like))
                 like_photos.photos_id = dislike
                 like_photos.like_status = "dislike"

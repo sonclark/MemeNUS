@@ -172,15 +172,50 @@
 				<h1>{{ item.description }}</h1>
 			</div>
 			<img class="img-thumbnail"  style="max-width: 100%; width: auto\9; height: auto;" src="{{ item.image_link }}" >
-            {% for like in liked_photos %}
+            {% if liked_photos_count > 0 %}
 
-                {% if item.OwnerString == like.photos_id %}
-                    {% if like.like_status == "like" %}
-{#                        <div>display dim like button(when pressed will - 1 to like + update like_status to dislike)</div>#}
-{#                        <div>display normal unlike button(when pressed will -1 to like + update like_status to dislike)</div>#}
+                {% for like in liked_photos %}
+
+                    {% if item.OwnerString == like.photos_id %}
+
+                        {% if like.like_status == "like" %}
+                            {#                        <div>display dim like button(when pressed will - 1 to like + update like_status to dislike)</div>#}
+                            {#                        <div>display normal unlike button(when pressed will -1 to like + update like_status to dislike)</div>#}
+                            <div class="row" style="width:550px;padding-top:15px;">
+                                <form method="post" action="/submit_likes">
+                                    <div class="col-xs-3" style="width:15%;"><button type="button" style="width:60px;" class="btn btn-block btn-lg btn-success" disabled ><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <small>({{ item.likes }})</small>
+                                    </div>
+                                    <div class="col-xs-3" style="width:15%;"><button type="submit" name="dislike" id="dislike" value="{{ item.OwnerString }}"style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon  glyphicon-thumbs-down"></span></button>
+
+                                    </div>
+                                </form>
+                                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+                                <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
+                            </div>
+
+                        {% elif like.like_status == "dislike" %}
+                            {#                        <div>display normal like button(when pressed will + 1 to like + update like_status to like)</div>#}
+                            {#                        <div>display dim dislike button(when pressed will + 1 to like + update like_status to like)</div>#}
+                            <div class="row" style="width:550px;padding-top:15px;">
+                                <form method="post" action="/submit_likes">
+                                    <div class="col-xs-3" style="width:15%;"><button type="submit" name="like" id="like" value="{{ item.OwnerString }}" style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                        <small>({{ item.likes }})</small>
+                                    </div>
+                                    <div class="col-xs-3" style="width:15%;"><button type="button" style="width:60px;" class="btn btn-block btn-lg btn-danger" disabled ><span class="glyphicon  glyphicon-thumbs-down"></span></button>
+
+                                    </div>
+                                </form>
+                                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+                                <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
+                            </div>
+
+
+                        {% endif %}
+                    {% elif liked_photos_count == 1 %}
                         <div class="row" style="width:550px;padding-top:15px;">
                             <form method="post" action="/submit_likes">
-                                <div class="col-xs-3" style="width:15%;"><button type="button" style="width:60px;" class="btn btn-block btn-lg btn-success" disabled ><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                                <div class="col-xs-3" style="width:15%;"><button type="submit" name="like" id="like" value="{{ item.OwnerString }}" style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="glyphicon glyphicon-thumbs-up"></span></button>
                                     <small>({{ item.likes }})</small>
                                 </div>
                                 <div class="col-xs-3" style="width:15%;"><button type="submit" name="dislike" id="dislike" value="{{ item.OwnerString }}"style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon  glyphicon-thumbs-down"></span></button>
@@ -191,24 +226,25 @@
                             <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
                         </div>
                     {% endif %}
-                    {% if like.like_status == "dislike" %}
-{#                        <div>display normal like button(when pressed will + 1 to like + update like_status to like)</div>#}
-{#                        <div>display dim dislike button(when pressed will + 1 to like + update like_status to like)</div>#}
-                        <div class="row" style="width:550px;padding-top:15px;">
-                            <form method="post" action="/submit_likes">
-                                <div class="col-xs-3" style="width:15%;"><button type="submit" name="like" id="like" value="{{ item.OwnerString }}" style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="glyphicon glyphicon-thumbs-up"></span></button>
-                                    <small>({{ item.likes }})</small>
-                                </div>
-                                <div class="col-xs-3" style="width:15%;"><button type="button" style="width:60px;" class="btn btn-block btn-lg btn-danger" disabled ><span class="glyphicon  glyphicon-thumbs-down"></span></button>
 
-                                </div>
-                            </form>
-                            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
-                            <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
+                {% endfor %}
+            {% else %}
+                <div class="row" style="width:550px;padding-top:15px;">
+                    <form method="post" action="/submit_likes">
+                        <div class="col-xs-3" style="width:15%;"><button type="submit" name="like" id="like" value="{{ item.OwnerString }}" style="width:60px;" class="btn btn-block btn-lg btn-success" ><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                            <small>({{ item.likes }})</small>
                         </div>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
+                        <div class="col-xs-3" style="width:15%;"><button type="submit" name="dislike" id="dislike" value="{{ item.OwnerString }}"style="width:60px;" class="btn btn-block btn-lg btn-danger" ><span class="glyphicon  glyphicon-thumbs-down"></span></button>
+
+                        </div>
+                    </form>
+                    <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+                    <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
+                </div>
+
+
+
+            {% endif %}
             <!-- Time might use moment.js we shall see
             <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
 
