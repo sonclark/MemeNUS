@@ -307,6 +307,24 @@ class Profile(webapp2.RequestHandler):
         else :
             self.redirect(self.request.host_url)
 
+class HowTo(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        if user:
+
+            parent_key = ndb.Key('Persons', users.get_current_user().email())
+
+            upload_url = blobstore.create_upload_url('/submit')
+            template_values = {
+                'user_mail' : users.get_current_user().email(),
+                'user_name' : users.get_current_user().email().split("@")[0],
+                'logout' : users.create_logout_url(self.request.host_url),
+                'upload_url' : upload_url,
+                }
+            template = jinja_environment.get_template("guide.html")
+            self.response.out.write(template.render(template_values))
+        else :
+            self.redirect(self.request.host_url)
 app = webapp2.WSGIApplication([
                                   ('/', MainPage),
                                   ('/deleteitem', DeleteItem),
@@ -317,6 +335,7 @@ app = webapp2.WSGIApplication([
                                   ('/submit', Submit),
                                   ('/profile', Profile),
                                   ('/getOpenId', GetOpenId),
+                                  ('/howto', HowTo),
 
                                   ],
                                     debug=True)
