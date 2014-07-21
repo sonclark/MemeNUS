@@ -34,6 +34,8 @@ from google.appengine.api import images
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"), autoescape=True)
 app_domain = "http://memeatnus.appspot.com/"
+jinja_env = jinja2.Environment(extensions=['jinja2.ext.loopcontrols'], loader=jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"), autoescape=True)
+
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
@@ -49,7 +51,8 @@ class MainPage(webapp2.RequestHandler):
                             )
             query2 = ndb.gql("SELECT *"
                              "from Liked_photos "
-                             "WHERE ANCESTOR IS :1 ",
+                             "WHERE ANCESTOR IS :1 "
+                             "ORDER BY date DESC",
                              parent_key
             )
 
@@ -64,10 +67,10 @@ class MainPage(webapp2.RequestHandler):
 
             }
 
-            template = jinja_environment.get_template('home.html')
+            template = jinja_env.get_template('home.html')
             self.response.out.write(template.render(template_values))
         else :
-            template = jinja_environment.get_template('welcome.html')
+            template = jinja_env.get_template('welcome.html')
             self.response.out.write(template.render())
 
 class Persons(ndb.Model):
@@ -77,7 +80,7 @@ class Persons(ndb.Model):
 class Liked_photos(ndb.Model):
     photos_id = ndb.StringProperty()
     like_status = ndb.StringProperty()
-
+    date = ndb.DateTimeProperty(auto_now =True)
 class Images(ndb.Model):
     #Models an item with item_link, image_link, description, and date. Key is item_id.
     item_id = ndb.IntegerProperty()

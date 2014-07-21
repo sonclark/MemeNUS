@@ -15,3 +15,8 @@ indexes:
   - name: date
     direction: desc
 
+- kind: Liked_photos
+  ancestor: yes
+  properties:
+  - name: date
+    direction: desc
