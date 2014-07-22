@@ -21,6 +21,9 @@ handlers:
 - url : /bootstrap/css
   static_dir : bootstrap/css
 
+- url : /content
+  static_dir: content
+
 - url: /.*
   script: memeatnus.app
 

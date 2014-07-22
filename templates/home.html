@@ -22,6 +22,15 @@
 
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -166,8 +175,9 @@
 
 
 <div class="container" style="padding-top:40px;" align="center">
-
+    {% set count = 1 %}
     {% for item in items %}
+
 		<div class="posts" style="width:600px;">
 			<div class="page-header">
 				<h1>{{ item.description }}</h1>
@@ -191,7 +201,7 @@
 
                                     </div>
                                 </form>
-                                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+                                <div class="col-xs-3" style="width:15%;"><a href = "#" data-toggle="modal" data-target="#myModal_comment{{ count }}"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></a></div>
                                 <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
                             </div>
                             {% break %}
@@ -207,7 +217,7 @@
 
                                     </div>
                                 </form>
-                                <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+                                <div class="col-xs-3" style="width:15%;"><a href = "#" data-toggle="modal" data-target="#myModal_comment{{ count }}"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></a></div>
                                 <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
                             </div>
                             {% break %}
@@ -223,7 +233,7 @@
 
                                 </div>
                             </form>
-                            <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+                            <div class="col-xs-3" style="width:15%;"><a href = "#" data-toggle="modal" data-target="#myModal_comment{{ count }}"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></a></div>
                             <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
                         </div>
 
@@ -240,13 +250,28 @@
 
                         </div>
                     </form>
-                    <div class="col-xs-3" style="width:15%;"><button style="width:60px;" class="btn btn-block btn-lg btn-warning" ><span class="glyphicon  glyphicon-comment"></span></button></div>
+                    <div class="col-xs-3" style="width:15%;"><a href = "#" data-toggle="modal" data-target="#myModal_comment{{ count }}"><button style="width:60px;" class="btn btn-block btn-lg btn-warning"><span class="glyphicon  glyphicon-comment"></span></button></a></div>
                     <div style="float:right;"><a href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?u={{ item.image_link }}');" class="btn btn-block btn-lg btn-info" style="background-color: #2980B9;">Share On Facebook</a></div>
                 </div>
 
 
 
             {% endif %}
+            <div class="modal fade" id="myModal_comment{{ count }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Comments</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="fb-comments" data-href="http://memeatnus.appspot.com/#comment{{ item.OwnerString }}" data-numposts="5" data-colorscheme="light"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% set count = count +1 %}
             <!-- Time might use moment.js we shall see
             <div>{{ item.date.strftime('%Y-%m-%d')  }}</div>-->
 
