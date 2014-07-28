@@ -35,9 +35,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><font><font>Upload </font></font><b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href = "#" data-toggle="modal" data-target="#myModal_url"><font><font>Add from url</font></font></a></li>
+                        <li><a href = "#" data-toggle="modal" data-target="#myModal_url"><font><font>Upload From URL</font></font></a></li>
                         <li><a href = "#" data-toggle="modal" data-target="#myModal_images"><font><font>Upload Image</font></font></a></li>
-                        <li><a href="http://memeful.com/?ref=9gag"><font><font>Make a meme</font></font></a></li>
+                        <li><a href="http://memeful.com/?ref=9gag"><font><font>Make a Meme</font></font></a></li>
 
                     </ul>
                 </li>
@@ -50,8 +50,8 @@
                         <li><a href="http://nus-bell-curve-god.appspot.com/"><font><font>PRAY?</font></font></a></li>
                         <li class="divider"></li>
                         <li class="dropdown-header"><font><font>Popular Memes</font></font></li>
-                        <li><a href="#"><font><font>Featured MEME</font></font></a></li>
-                        <li><a href="#"><font><font>Top Rated MEME</font></font></a></li>
+                        <li><a href="#"><font><font>Featured Meme</font></font></a></li>
+                        <li><a href="#"><font><font>Top Rated Meme</font></font></a></li>
                     </ul>
                 </li>
                 <li><a href="/howto"><font><font>Guide</font></font></a></li>
@@ -107,7 +107,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Upload Image thru Url</h4>
+                <h4 class="modal-title" id="myModalLabel">Upload Image through URL</h4>
                 <p class ="dropdown-header">Upload funny pictures, paste pictures URL, accepting GIF/JPG/PNG (Max size: 3MB)</p>
             </div>
             <div class="modal-body">
@@ -115,13 +115,13 @@
                 <form class="form-horizontal well" method="post" action="/upload" id="modal-form">
 
                     <div class="modal-body">
-                        <div style="clear:both;float:left;width:500px;">
+                        <div style="clear:both;float:left;width:100%;">
                             <input id="textinput" name="textinput" type="text" placeholder="http://" class="form-control input-md">
 
 						</div>
 
                         <div style="clear:both;float:left;"> <label>Title</label> </div>
-                        <div style="clear:both;float:left;"> <textarea id="test1" name="test1" style="width:500px;height:100px;max-width:500px;max-height:100px;"></textarea></div>
+                        <div style="clear:both;float:left;width:100%;"> <textarea id="test1" name="test1" style="width:100%;height:100px;resize:none;"></textarea></div>
                         <br>
 						<div style="clear:both;float:left;"><span id="count1"></span> characters remaining remaining</div>
 						<br>
@@ -164,7 +164,7 @@
 
 
 					<div style="clear:both;float:left;"> <label>Title</label> </div>
-                    <div style="clear:both;float:left;"><textarea id='test2' name="test2" style="width:500px;height:100px;max-width:500px;max-height:100px;"></textarea></div>
+                    <div style="clear:both;float:left;width:100%;"><textarea id='test2' name="test2" style="width:100%;height:100px;resize:none;"></textarea></div>
                     <br>
 					<div style="clear:both;float:left;"><span id='count2'></span> characters remaining remaining </div>
                     <br>
